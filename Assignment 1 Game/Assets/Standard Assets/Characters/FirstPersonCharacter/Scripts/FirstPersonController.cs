@@ -211,11 +211,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if(CrossPlatformInputManager.GetAxis("Horizontal") != 0)
             {
-                GameObject.Find("Worm").GetComponent<Attack_mechanics>().charge += GameObject.Find("Worm").GetComponent<Attack_mechanics>().buildspeed;
+                GetComponent<Attack_mechanics>().charge += GetComponent<Attack_mechanics>().buildspeed;
             }
             else if (CrossPlatformInputManager.GetAxis("Vertical") != 0)
             {
-                GameObject.Find("Worm").GetComponent<Attack_mechanics>().charge += GameObject.Find("Worm").GetComponent<Attack_mechanics>().buildspeed;
+                GetComponent<Attack_mechanics>().charge += GetComponent<Attack_mechanics>().buildspeed;
             }
 
             bool waswalking = m_IsWalking;
