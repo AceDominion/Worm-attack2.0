@@ -6,7 +6,6 @@ internal class Attack_mechanics : MonoBehaviour {
 
     public float charge;
     public float buildspeed;
-    //public GameObject[] checkpoints;
     public float exit = 2;
     public float leaveS;
     public float leaveN;
@@ -15,26 +14,17 @@ internal class Attack_mechanics : MonoBehaviour {
     public int direction;
     public float currX;
     public float currZ;
+    public float distance;
 
     // Use this for initialization
     void Start ()
     {
-        int[][] distance = { 100, 200, 300, 200 }, { 1,2 };
-        Dictionary<int, int> d1 = new Dictionary<int, int>();
-        d.Add(1, 100);
-
-        d.Add(2, 200);
-
-        int b = d[1];
-
-        Dictionary<int, int> d2 = new Dictionary<int, int>();
-
-        Dictionary<int, int>[] ds = { , d2 };
-
-
-        List<int[]> ck = new List<int[]>(); // path list
-        ck.
-	}
+        List<Checkpoint> Checkpoints = new List<Checkpoint>(); // check to see if they all add up
+        Checkpoint ck1 = new Checkpoint("ck1",100, 200, 300, 400, 0, 1, 400, 200);
+        Checkpoint ck2 = new Checkpoint(100, 400, 300, 0, 0, 2, 0, 300);
+        Checkpoints.Add(ck1);
+        Checkpoints.Add(ck2);
+    }
 
 
 	// Update is called once per frame
@@ -42,6 +32,7 @@ internal class Attack_mechanics : MonoBehaviour {
     {
         currX = transform.position.x;
         currZ = transform.position.z;
+
 
 
 	}
@@ -80,6 +71,7 @@ internal class Attack_mechanics : MonoBehaviour {
         if (currX > leaveW) //west
         {
             direction = 1;
+            distance = leaveW;
         }
 
         if (currZ > leaveN) //north
@@ -96,12 +88,30 @@ internal class Attack_mechanics : MonoBehaviour {
         {
             direction = 4;
         }
-
-        Dictionary<int, List<int>> ck = new Dictionary<int, List<int>>();
-        int[] corrdW = [1, 100];
-        int[] corrdE = [3, 100];
-
-
-        ck.Add(1, new List<int[]> { new int[]{ 1, 200 }, new int[] { 2, 200 });
     }
+}
+
+/// <summary>
+///  checkpoints from which to track the player
+/// </summary>
+class Checkpoint 
+{
+    public int[] B = { 0, 0, 0, 0 };
+
+    public Checkpoint(int n, int e, int s, int w, int PO, int PT, int PDO, int PDT)
+    {
+        B[0] = n;
+        B[1] = e;
+        B[2] = s;
+        B[3] = w;
+        pathOne = PO;
+        pathTwo = PT;
+        PDistOne = PDO;
+        PDistTwo = PDT;
+    }
+
+    public int pathOne;
+    public int pathTwo;
+    public int PDistOne; // left to right
+    public int PDistTwo;
 }
