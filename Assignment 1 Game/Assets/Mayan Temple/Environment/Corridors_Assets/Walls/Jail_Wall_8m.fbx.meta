@@ -1,0 +1,123 @@
+fileFormatVersion: 2
+guid: 8cfa9b0ee7a023d438152bdf9bfdad9b
+timeCreated: 1434475618
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Jail_Decoration_top
+    100002: //RootNode
+    100004: metal_bars
+    100006: Metal_jail_bricks_bottom
+    100008: Metal_jail_bricks_bottom1
+    100010: Metal_jail_bricks_bottom2
+    100012: Metal_jail_bricks_top
+    100014: Metal_jail_bricks_top1
+    100016: Metal_jail_bricks_top2
+    100018: Metal_jail_Door
+    100020: polySurface194
+    100022: polySurface220
+    100024: transform11
+    400000: Jail_Decoration_top
+    400002: //RootNode
+    400004: metal_bars
+    400006: Metal_jail_bricks_bottom
+    400008: Metal_jail_bricks_bottom1
+    400010: Metal_jail_bricks_bottom2
+    400012: Metal_jail_bricks_top
+    400014: Metal_jail_bricks_top1
+    400016: Metal_jail_bricks_top2
+    400018: Metal_jail_Door
+    400020: polySurface194
+    400022: polySurface220
+    400024: transform11
+    2300000: Jail_Decoration_top
+    2300002: metal_bars
+    2300004: Metal_jail_bricks_bottom
+    2300006: Metal_jail_bricks_bottom1
+    2300008: Metal_jail_bricks_bottom2
+    2300010: Metal_jail_bricks_top
+    2300012: Metal_jail_bricks_top1
+    2300014: Metal_jail_bricks_top2
+    2300016: polySurface194
+    3300000: Jail_Decoration_top
+    3300002: metal_bars
+    3300004: Metal_jail_bricks_bottom
+    3300006: Metal_jail_bricks_bottom1
+    3300008: Metal_jail_bricks_bottom2
+    3300010: Metal_jail_bricks_top
+    3300012: Metal_jail_bricks_top1
+    3300014: Metal_jail_bricks_top2
+    3300016: polySurface194
+    4300000: polySurface194
+    4300002: Metal_jail_bricks_bottom
+    4300004: Jail_Decoration_top
+    4300006: Metal_jail_bricks_bottom1
+    4300008: Metal_jail_bricks_bottom2
+    4300010: Metal_jail_bricks_top1
+    4300012: Metal_jail_bricks_top2
+    4300014: Metal_jail_bricks_top
+    4300016: metal_bars
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
