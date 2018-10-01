@@ -15,24 +15,64 @@ internal class Attack_mechanics : MonoBehaviour {
     public float currX;
     public float currZ;
     public float distance;
+    public Vector3 checkpos;
+    public GameObject Worm;
+    public int attack;
+    public float Aspeed;
+
+
+    List<Checkpoint> Checkpoints;
+    public Checkpoint currentCheckpoint;
+
 
     // Use this for initialization
     void Start ()
     {
-        List<Checkpoint> Checkpoints = new List<Checkpoint>(); // check to see if they all add up
-        Checkpoint ck1 = new Checkpoint("ck1",100, 200, 300, 400, 0, 1, 400, 200);
-        Checkpoint ck2 = new Checkpoint(100, 400, 300, 0, 0, 2, 0, 300);
+        Checkpoints = new List<Checkpoint>(); // check to see if they all add up
+        Checkpoint ck1 = new Checkpoint("ck1",10, 20, 30, 40, 0, 1, 400, 200);
+        Checkpoint ck2 = new Checkpoint("ck2",100, 0, 0, 20, 0, 2, 0, 300);
         Checkpoints.Add(ck1);
         Checkpoints.Add(ck2);
+        attack = 0;
+
     }
+    public float timeLeft = 10f;
 
-
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update ()
     {
         currX = transform.position.x;
         currZ = transform.position.z;
 
+        if (charge > 10)
+        {
+            if (direction == -1 )
+            {
+                if (attack == 0)
+                {
+                    Worm.transform.position = new Vector3(checkpos.x, checkpos.y + 10, checkpos.z);
+                    attack = 1;
+                }
+
+                Worm.transform.position = new Vector3(checkpos.x, Worm.transform.position.y - (Time.deltaTime * Aspeed), checkpos.z);
+
+                if (Worm.transform.position.y < (checkpos.y - 20))
+                {
+                    attack = 0;
+                    charge = 0;
+                }
+                /*
+                for (A = 0;  A < 10; A++)
+                {
+                    Worm.transform.position = new Vector3(checkpos.x, Worm.transform.position.y - Time.deltaTime, checkpos.z);
+                }
+                */
+            }
+
+
+
+
+        }
 
 
 	}
@@ -44,21 +84,14 @@ internal class Attack_mechanics : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        /*int flag;
-        for (int i = 0; i<checkpoints.Length; i++) {
-            if( other.name.Length > 11)
+        foreach (Checkpoint ck in Checkpoints) {
+            if (other.name.Contains(ck.name))
             {
-                flag = int.Parse(other.name.Substring(10, 2));
+                direction = -1;
+                currentCheckpoint = ck;
+                checkpos = other.transform.position;
             }
-            else
-            {
-                flag = int.Parse(other.name.Substring(10, 1));
-            }
-
         }
-        if (other.name.Contains("checkpoint")) {
-
-        }*/
     }
 
     private void OnTriggerExit(Collider other)
@@ -70,24 +103,26 @@ internal class Attack_mechanics : MonoBehaviour {
 
         if (currX > leaveW) //west
         {
-            direction = 1;
+            direction = 0;
             distance = leaveW;
         }
 
         if (currZ > leaveN) //north
         {
-            direction = 2;
+            direction = 1;
         }
 
         if (currX < leaveE) //east
         {
-            direction = 3;
+            direction = 2;
         }
 
         if (currZ < leaveS) //south
         {
-            direction = 4;
+            direction = 3;
         }
+
+        distance = currentCheckpoint.B[direction];
     }
 }
 
@@ -98,18 +133,20 @@ class Checkpoint
 {
     public int[] B = { 0, 0, 0, 0 };
 
-    public Checkpoint(int n, int e, int s, int w, int PO, int PT, int PDO, int PDT)
+    public Checkpoint(string a,int w, int n, int e, int s, int PO, int PT, int PDO, int PDT)
     {
-        B[0] = n;
-        B[1] = e;
-        B[2] = s;
-        B[3] = w;
+        name = a;
+        B[0] = w;
+        B[1] = n;
+        B[2] = e;
+        B[3] = s;
         pathOne = PO;
         pathTwo = PT;
         PDistOne = PDO;
         PDistTwo = PDT;
     }
 
+    public string name;
     public int pathOne;
     public int pathTwo;
     public int PDistOne; // left to right
