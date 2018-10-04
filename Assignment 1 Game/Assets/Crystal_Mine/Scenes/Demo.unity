@@ -1327,7 +1327,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133752813}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3188,7 +3188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charge: 0
-  buildspeed: 0.1
+  buildspeed: 1
   exit: 2
   leaveS: 0
   leaveN: 0
@@ -3200,6 +3200,13 @@ MonoBehaviour:
   distance: 0
   checkpos: {x: 0, y: 0, z: 0}
   Worm: {fileID: 1520696581}
+  attack: 0
+  Aspeed: 10
+  CPattack: 0
+  SWattack: 0
+  Adistance: 10
+  Afrom: 20
+  cooldown: 0
 --- !u!1001 &313943254
 Prefab:
   m_ObjectHideFlags: 0
@@ -9296,7 +9303,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 816543571}
-  m_LocalRotation: {x: 0.41707426, y: 0, z: 0, w: 0.9088724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -15573,7 +15580,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1313249321}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -18026,7 +18033,7 @@ Transform:
   m_GameObject: {fileID: 1520696581}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1.03, y: 18.22, z: 29.13}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 5, y: 13, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4

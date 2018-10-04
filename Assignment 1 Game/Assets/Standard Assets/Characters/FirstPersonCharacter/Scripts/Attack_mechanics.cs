@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 internal class Attack_mechanics : MonoBehaviour {
 
@@ -19,10 +20,18 @@ internal class Attack_mechanics : MonoBehaviour {
     public GameObject Worm;
     public int attack;
     public float Aspeed;
-
+    public int CPattack;
+    public int SWattack;
+    public int CDattack;
+    public int Adistance;
+    public int Adirection;
+    public int Afrom;
+    public int cooldown;
 
     List<Checkpoint> Checkpoints;
     public Checkpoint currentCheckpoint;
+
+    System.Random rnd;
 
 
     // Use this for initialization
@@ -34,39 +43,138 @@ internal class Attack_mechanics : MonoBehaviour {
         Checkpoints.Add(ck1);
         Checkpoints.Add(ck2);
         attack = 0;
+        direction = -2;
+        rnd = new System.Random();
 
     }
-    public float timeLeft = 10f;
 
     // Update is called once per frame
     void Update ()
     {
-        currX = transform.position.x;
-        currZ = transform.position.z;
 
-        if (charge > 10)
+        currZ = transform.position.z;
+        currX = transform.position.x;
+
+        int attacktype = rnd.Next(1,21);
+
+        if (charge > 100 || attack == 1)
         {
-            if (direction == -1 )
+            if ((direction == -1 || CPattack == 1) && cooldown == 0) //checkpoint attack
             {
+                CPattack = 1;
                 if (attack == 0)
                 {
-                    Worm.transform.position = new Vector3(checkpos.x, checkpos.y + 10, checkpos.z);
+                    //make worm appear
+                    Worm.transform.position = new Vector3(checkpos.x, checkpos.y + Afrom, checkpos.z);
+                    Worm.transform.rotation = new Quaternion(0, 0, 0, 0);
                     attack = 1;
                 }
 
                 Worm.transform.position = new Vector3(checkpos.x, Worm.transform.position.y - (Time.deltaTime * Aspeed), checkpos.z);
+                charge = 0;
 
-                if (Worm.transform.position.y < (checkpos.y - 20))
+                if (Worm.transform.position.y < (checkpos.y - Adistance))
+                {
+                    //make worm disappear
+                    attack = 0;
+                    CPattack = 0;
+                    cooldown = 1;
+                }
+            }
+
+            if ((attacktype < 15 || SWattack == 1) && cooldown == 0) //corridor wall to wall attack
+            {
+                SWattack = 1;
+                if (attack == 0)
+                {
+                    if (direction == 0)
+                    {
+                        Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                        Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                        attack = 1;
+                        Adirection = 0;
+                    }
+                    else if (direction == 1)
+                    {
+                        Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                        Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                        attack = 1;
+                        Adirection = 1;
+                    }
+                    else if (direction == 2)
+                    {
+                        Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                        Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                        attack = 1;
+                        Adirection = 2;
+                    }
+                    else if (direction == 3)
+                    {
+                        Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                        Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                        attack = 1;
+                        Adirection = 3;
+                    }
+                }
+
+                if (Adirection == 0)
+                {
+                    Worm.transform.position = new Vector3(Worm.transform.position.x, Worm.transform.position.y, Worm.transform.position.z - (Time.deltaTime * Aspeed));
+                }
+                if (Adirection == 1)
+                {
+                    Worm.transform.position = new Vector3(Worm.transform.position.x, Worm.transform.position.y, Worm.transform.position.z + (Time.deltaTime * Aspeed));
+                }
+                if (Adirection == 2)
+                {
+                    Worm.transform.position = new Vector3(Worm.transform.position.x - (Time.deltaTime * Aspeed), Worm.transform.position.y, Worm.transform.position.z);
+                }
+                if (Adirection == 3)
+                {
+                    Worm.transform.position = new Vector3(Worm.transform.position.x + (Time.deltaTime * Aspeed), Worm.transform.position.y, Worm.transform.position.z);
+                }
+                charge = 0;
+
+                if ((Worm.transform.position.z < (transform.position.z - Adistance) && Adirection == 0) || (Worm.transform.position.z < (transform.position.z + Adistance) && Adirection == 1) || (Worm.transform.position.x < (transform.position.x - Adistance) && Adirection == 2) || (Worm.transform.position.x < (transform.position.x + Adistance) && Adirection == 3))
                 {
                     attack = 0;
-                    charge = 0;
+                    SWattack = 0;
+                    cooldown = 1;
                 }
-                /*
-                for (A = 0;  A < 10; A++)
+
+            }
+
+            if ((attacktype >= 15 || CDattack == 1) && cooldown == 0)
+            {
+                CDattack = 1;
+                if (attack == 0)
                 {
-                    Worm.transform.position = new Vector3(checkpos.x, Worm.transform.position.y - Time.deltaTime, checkpos.z);
+                    if (direction == 0 || direction == 2)
+                    {
+                        int Dpath = currentCheckpoint.PDistOne;
+                        int pathD = Dpath - currentCheckpoint.pathOne; //left to right
+                        Worm.transform.position = new Vector3(checkpos.x + Dpath +  Afrom, checkpos.y, checkpos.z); //work position out
+                        Worm.transform.rotation = new Quaternion(0, 0, 90, 90);
+                    }
+                    else if (direction == 1 || direction == 3)
+                    {
+                        int Dpath = currentCheckpoint.PDistTwo;
+                        int pathD = Dpath - currentCheckpoint.pathTwo; //up to down
+                        Worm.transform.position = new Vector3(checkpos.x, checkpos.y, checkpos.z + Dpath + Afrom); //work position out
+                        Worm.transform.rotation = new Quaternion(0, 0, 90, 90);
+                    }
+                    attack = 1;
                 }
-                */
+
+                Worm.transform.position = new Vector3(Worm.transform.position.x - (Time.deltaTime * Aspeed), Worm.transform.position.y, Worm.transform.position.z);
+                charge = 0;
+
+                if ((Worm.transform.position.z < (checkpos.z - Adistance) && Adirection == 0) || (Worm.transform.position.z < (transform.position.z + Adistance) && Adirection == 1) || (Worm.transform.position.x < (transform.position.x - Adistance) && Adirection == 2) || (Worm.transform.position.x < (transform.position.x + Adistance) && Adirection == 3))
+                {
+                    attack = 0;
+                    CDattack = 0;
+                    cooldown = 1;
+                }
             }
 
 
@@ -74,6 +182,7 @@ internal class Attack_mechanics : MonoBehaviour {
 
         }
 
+        cooldown = 0;
 
 	}
 
@@ -133,17 +242,17 @@ class Checkpoint
 {
     public int[] B = { 0, 0, 0, 0 };
 
-    public Checkpoint(string a,int w, int n, int e, int s, int PO, int PT, int PDO, int PDT)
+    public Checkpoint(string a,int w, int n, int e, int s, int PDO, int PDT, int DPO, int DPT)
     {
         name = a;
         B[0] = w;
         B[1] = n;
         B[2] = e;
         B[3] = s;
-        pathOne = PO;
-        pathTwo = PT;
-        PDistOne = PDO;
-        PDistTwo = PDT;
+        pathOne = PDO;
+        pathTwo = PDT;
+        PDistOne = DPO;
+        PDistTwo = DPT;
     }
 
     public string name;
