@@ -330,6 +330,8 @@ ModelImporter:
     100644: Pyramid351
     100646: Pyramid352
     100648: //RootNode
+    100650: Box091
+    100652: Box092
     400000: Box014
     400002: Box015
     400004: Box016
@@ -655,6 +657,8 @@ ModelImporter:
     400644: Pyramid351
     400646: Pyramid352
     400648: //RootNode
+    400650: Box091
+    400652: Box092
     2100000: No Name
     2300000: Box014
     2300002: Box015
@@ -978,6 +982,8 @@ ModelImporter:
     2300638: Pyramid350
     2300640: Pyramid351
     2300642: Pyramid352
+    2300644: Box091
+    2300646: Box092
     3300000: Box014
     3300002: Box015
     3300004: Box016
@@ -1300,6 +1306,8 @@ ModelImporter:
     3300638: Pyramid350
     3300640: Pyramid351
     3300642: Pyramid352
+    3300644: Box091
+    3300646: Box092
     4300000: Box014
     4300002: Pyramid101
     4300004: Pyramid102
@@ -1622,6 +1630,8 @@ ModelImporter:
     4300638: Pyramid115
     4300640: Pyramid114
     4300642: Pyramid113
+    4300644: Box091
+    4300646: Box092
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
