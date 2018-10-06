@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4aceb79fa03100c498cac7e3c9348d0d
-timeCreated: 1537780764
+guid: d3f7ab127fa329142a34b52fba0cf7d3
+timeCreated: 1538795688
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -26,6 +26,7 @@ ModelImporter:
     100036: Box022
     100038: Box023
     100040: //RootNode
+    100042: Cylinder001
     400000: Box001
     400002: Box005
     400004: Box006
@@ -47,26 +48,8 @@ ModelImporter:
     400036: Box022
     400038: Box023
     400040: //RootNode
-    2100000: Box001Mat
-    2100002: Box005Mat
-    2100004: Box006Mat
-    2100006: Box007Mat
-    2100008: Box008Mat
-    2100010: Box009Mat
-    2100012: Box010Mat
-    2100014: Box011Mat
-    2100016: Box012Mat
-    2100018: Box013Mat
-    2100020: Box014Mat
-    2100022: Box015Mat
-    2100024: Box016Mat
-    2100026: Box017Mat
-    2100028: Box018Mat
-    2100030: Box019Mat
-    2100032: Box020Mat
-    2100034: Box021Mat
-    2100036: Box022Mat
-    2100038: Box023Mat
+    400042: Cylinder001
+    2100000: No Name
     2300000: Box001
     2300002: Box005
     2300004: Box006
@@ -87,6 +70,7 @@ ModelImporter:
     2300034: Box021
     2300036: Box022
     2300038: Box023
+    2300040: Cylinder001
     3300000: Box001
     3300002: Box005
     3300004: Box006
@@ -107,26 +91,30 @@ ModelImporter:
     3300034: Box021
     3300036: Box022
     3300038: Box023
-    4300000: Box001
-    4300002: Box005
-    4300004: Box006
-    4300006: Box007
-    4300008: Box008
-    4300010: Box009
-    4300012: Box010
-    4300014: Box011
-    4300016: Box012
-    4300018: Box013
-    4300020: Box014
-    4300022: Box015
-    4300024: Box016
-    4300026: Box017
-    4300028: Box018
-    4300030: Box019
-    4300032: Box020
-    4300034: Box021
-    4300036: Box022
-    4300038: Box023
+    3300040: Cylinder001
+    4300000: Cylinder001
+    4300002: Box001
+    4300004: Box005
+    4300006: Box006
+    4300008: Box007
+    4300010: Box008
+    4300012: Box009
+    4300014: Box010
+    4300016: Box011
+    4300018: Box012
+    4300020: Box013
+    4300022: Box022
+    4300024: Box014
+    4300026: Box015
+    4300028: Box016
+    4300030: Box017
+    4300032: Box018
+    4300034: Box019
+    4300036: Box020
+    4300038: Box021
+    4300040: Box023
+    7400000: Take 001
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -201,7 +189,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
