@@ -27,6 +27,8 @@ internal class Attack_mechanics : MonoBehaviour {
     public int Adirection;
     public int Afrom;
     public int cooldown;
+    public float timer;
+    public float reset;
 
     List<Checkpoint> Checkpoints;
     public Checkpoint currentCheckpoint;
@@ -38,8 +40,8 @@ internal class Attack_mechanics : MonoBehaviour {
     void Start ()
     {
         Checkpoints = new List<Checkpoint>(); // check to see if they all add up
-        Checkpoint ck1 = new Checkpoint("ck1",10, 20, 30, 40, 0, 1, 400, 200);
-        Checkpoint ck2 = new Checkpoint("ck2",100, 0, 0, 20, 0, 2, 0, 300);
+        Checkpoint ck1 = new Checkpoint("ck1",20, 0, 0, 20, 20, 0, 0, 0);
+        Checkpoint ck2 = new Checkpoint("ck2",0, 20, 20, 0, 20, 20, 20, 20);
         Checkpoints.Add(ck1);
         Checkpoints.Add(ck2);
         attack = 0;
@@ -51,70 +53,182 @@ internal class Attack_mechanics : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-
         currZ = transform.position.z;
         currX = transform.position.x;
 
-        int attacktype = rnd.Next(1,21);
 
-        if (charge > 100 || attack == 1)
+        int attacktype = rnd.Next(1,21);
+        int RWattack = rnd.Next(1, 5);
+        int RCattack = rnd.Next(1, 3);
+
+        if ((charge > 100 || attack == 1) && cooldown == 0)
         {
-            if ((direction == -1 || CPattack == 1) && cooldown == 0) //checkpoint attack
+            if (((direction == -1 && SWattack == 0 && CDattack == 0) || CPattack == 1) && cooldown == 0) //checkpoint attack
             {
                 CPattack = 1;
                 if (attack == 0)
                 {
-                    //make worm appear
-                    Worm.transform.position = new Vector3(checkpos.x, checkpos.y + Afrom, checkpos.z);
-                    Worm.transform.rotation = new Quaternion(0, 0, 0, 0);
-                    attack = 1;
+                    if (RCattack == 1)
+                    {
+                        Worm.transform.position = new Vector3(checkpos.x, checkpos.y + Afrom, checkpos.z);
+                        Worm.transform.rotation = new Quaternion(0, 0, 0, 0);
+                        attack = 1;
+                        Adirection = 1;
+                    }
+                    else if ( RCattack == 2)
+                    {
+                        Worm.transform.position = new Vector3(checkpos.x, checkpos.y - Afrom, checkpos.z);
+                        Worm.transform.rotation = new Quaternion(0, 0, 0, 0);
+                        attack = 1;
+                        Adirection = 2;
+                    }
                 }
 
-                Worm.transform.position = new Vector3(checkpos.x, Worm.transform.position.y - (Time.deltaTime * Aspeed), checkpos.z);
+                if (Adirection == 1)
+                {
+                    Worm.transform.position = new Vector3(checkpos.x, Worm.transform.position.y - (Time.deltaTime * Aspeed), checkpos.z);
+                }
+                if (Adirection == 2)
+                {
+                    Worm.transform.position = new Vector3(checkpos.x, Worm.transform.position.y + (Time.deltaTime * Aspeed), checkpos.z);
+                }
                 charge = 0;
+                timer -= Time.deltaTime;
 
-                if (Worm.transform.position.y < (checkpos.y - Adistance))
+                if (((Worm.transform.position.y < (checkpos.y - Adistance) && Adirection == 1) || ((Worm.transform.position.y > (checkpos.y + Adistance)) && Adirection == 2) || timer <= 0))
                 {
                     //make worm disappear
                     attack = 0;
                     CPattack = 0;
-                    cooldown = 1;
+                    cooldown = 1; // cooldown only stops attacks when the attack finishes not while the attack is happening
+                    timer = reset;
                 }
             }
 
-            if ((attacktype < 15 || SWattack == 1) && cooldown == 0) //corridor wall to wall attack
+            if ((attacktype < 1 || SWattack == 1) && cooldown == 0) //corridor wall to wall attack
             {
                 SWattack = 1;
                 if (attack == 0)
                 {
-                    if (direction == 0)
+                    if (direction == 0 || direction == 2)
                     {
-                        Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
-                        Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
-                        attack = 1;
-                        Adirection = 0;
+                        if (RWattack == 1)
+                        {
+                            Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                            Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                            attack = 1;
+                            Adirection = 0;
+                        }
+                        else if (RWattack == 2)
+                        {
+                            Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                            Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                            attack = 1;
+                            Adirection = 1;
+                        }
+                        else if (RWattack == 3)
+                        {
+                            Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                            Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                            attack = 1;
+                            Adirection = 2;
+                        }
+                        else if (RWattack == 4)
+                        {
+                            Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                            Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                            attack = 1;
+                            Adirection = 3;
+                        }
                     }
-                    else if (direction == 1)
+
+                    if (direction == 1 || direction == 3) // two of the directions are wrong
                     {
-                        Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
-                        Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
-                        attack = 1;
-                        Adirection = 1;
+                        if (RWattack == 1)
+                        {
+                            Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                            Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                            attack = 1;
+                            Adirection = 0;
+                        }
+                        else if (RWattack == 2)
+                        {
+                            Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                            Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                            attack = 1;
+                            Adirection = 1;
+                        }
+                        else if (RWattack == 3)
+                        {
+                            Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                            Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                            attack = 1;
+                            Adirection = 2;
+                        }
+                        else if (RWattack == 4)
+                        {
+                            Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                            Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                            attack = 1;
+                            Adirection = 3;
+                        }
                     }
-                    else if (direction == 2)
+                }
+            
+            
+
+
+                if (Adirection == 0)
+                {
+                    Worm.transform.position = new Vector3(Worm.transform.position.x, Worm.transform.position.y, Worm.transform.position.z - (Time.deltaTime * Aspeed));
+                }
+                if (Adirection == 1)
+                {
+                    Worm.transform.position = new Vector3(Worm.transform.position.x, Worm.transform.position.y, Worm.transform.position.z + (Time.deltaTime * Aspeed));
+                }
+                if (Adirection == 2)
+                {
+                    Worm.transform.position = new Vector3(Worm.transform.position.x - (Time.deltaTime * Aspeed), Worm.transform.position.y, Worm.transform.position.z);
+                }
+                if (Adirection == 3)
+                {
+                    Worm.transform.position = new Vector3(Worm.transform.position.x + (Time.deltaTime * Aspeed), Worm.transform.position.y, Worm.transform.position.z);
+                }
+                charge = 0;
+                timer -= Time.deltaTime;
+
+                if (((Worm.transform.position.x > (transform.position.x + Adistance) && Adirection == 0) || (Worm.transform.position.z > (transform.position.z + Adistance) && Adirection == 1) || (Worm.transform.position.x < (transform.position.x - Adistance) && Adirection == 2) || (Worm.transform.position.z < (transform.position.z - Adistance) && Adirection == 3)) || timer <= 0)
+                {
+                    attack = 0;
+                    SWattack = 0;
+                    cooldown = 1;
+                    timer = reset;
+                }
+
+            }
+
+            if ((attacktype >= 2 || CDattack == 1) && cooldown == 0)
+            {
+                CDattack = 1;
+                if (attack == 0)
+                {
+                    if (direction == 0 || direction == 2)
                     {
-                        Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
-                        Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
-                        attack = 1;
+                        int Dpath = currentCheckpoint.PDistOne;
+                        int pathD = Dpath - currentCheckpoint.pathOne; //left to right
+                        Worm.transform.position = new Vector3(checkpos.x + Dpath +  Afrom, checkpos.y, checkpos.z); //work position out
+                        Worm.transform.rotation = new Quaternion(0, 0, 90, 90);
                         Adirection = 2;
                     }
-                    else if (direction == 3)
+                    else if (direction == 1 || direction == 3)
                     {
-                        Worm.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Afrom);// change to correct position
+                        int Dpath = currentCheckpoint.PDistTwo;
+                        int pathD = Dpath - currentCheckpoint.pathTwo; //up to down
+                        Worm.transform.position = new Vector3(checkpos.x, checkpos.y, checkpos.z + Dpath + Afrom); //work position out
                         Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
-                        attack = 1;
-                        Adirection = 3;
+                        Adirection = 1;
                     }
+                    attack = 1;
                 }
 
                 if (Adirection == 0)
@@ -134,46 +248,15 @@ internal class Attack_mechanics : MonoBehaviour {
                     Worm.transform.position = new Vector3(Worm.transform.position.x + (Time.deltaTime * Aspeed), Worm.transform.position.y, Worm.transform.position.z);
                 }
                 charge = 0;
+                timer -= Time.deltaTime;
 
-                if ((Worm.transform.position.z < (transform.position.z - Adistance) && Adirection == 0) || (Worm.transform.position.z < (transform.position.z + Adistance) && Adirection == 1) || (Worm.transform.position.x < (transform.position.x - Adistance) && Adirection == 2) || (Worm.transform.position.x < (transform.position.x + Adistance) && Adirection == 3))
-                {
-                    attack = 0;
-                    SWattack = 0;
-                    cooldown = 1;
-                }
-
-            }
-
-            if ((attacktype >= 15 || CDattack == 1) && cooldown == 0)
-            {
-                CDattack = 1;
-                if (attack == 0)
-                {
-                    if (direction == 0 || direction == 2)
-                    {
-                        int Dpath = currentCheckpoint.PDistOne;
-                        int pathD = Dpath - currentCheckpoint.pathOne; //left to right
-                        Worm.transform.position = new Vector3(checkpos.x + Dpath +  Afrom, checkpos.y, checkpos.z); //work position out
-                        Worm.transform.rotation = new Quaternion(0, 0, 90, 90);
-                    }
-                    else if (direction == 1 || direction == 3)
-                    {
-                        int Dpath = currentCheckpoint.PDistTwo;
-                        int pathD = Dpath - currentCheckpoint.pathTwo; //up to down
-                        Worm.transform.position = new Vector3(checkpos.x, checkpos.y, checkpos.z + Dpath + Afrom); //work position out
-                        Worm.transform.rotation = new Quaternion(0, 0, 90, 90);
-                    }
-                    attack = 1;
-                }
-
-                Worm.transform.position = new Vector3(Worm.transform.position.x - (Time.deltaTime * Aspeed), Worm.transform.position.y, Worm.transform.position.z);
-                charge = 0;
-
-                if ((Worm.transform.position.z < (checkpos.z - Adistance) && Adirection == 0) || (Worm.transform.position.z < (transform.position.z + Adistance) && Adirection == 1) || (Worm.transform.position.x < (transform.position.x - Adistance) && Adirection == 2) || (Worm.transform.position.x < (transform.position.x + Adistance) && Adirection == 3))
+                if (((Worm.transform.position.x > (transform.position.x + Adistance) && Adirection == 0) || (Worm.transform.position.z > (transform.position.z + Adistance) && Adirection == 1) || (Worm.transform.position.x < (transform.position.x - Adistance) && Adirection == 2) || (Worm.transform.position.z < (transform.position.z - Adistance) && Adirection == 3)) || timer <= 0)
                 {
                     attack = 0;
                     CDattack = 0;
                     cooldown = 1;
+                    timer = reset;
+                    Adirection = -2;
                 }
             }
 
@@ -213,7 +296,6 @@ internal class Attack_mechanics : MonoBehaviour {
         if (currX > leaveW) //west
         {
             direction = 0;
-            distance = leaveW;
         }
 
         if (currZ > leaveN) //north
