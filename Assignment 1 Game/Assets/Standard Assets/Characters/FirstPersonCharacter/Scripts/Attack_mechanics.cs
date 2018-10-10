@@ -39,11 +39,17 @@ internal class Attack_mechanics : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        Checkpoints = new List<Checkpoint>(); // check to see if they all add up
-        Checkpoint ck1 = new Checkpoint("ck1",20, 0, 0, 20, 20, 0, 0, 0);
-        Checkpoint ck2 = new Checkpoint("ck2",0, 20, 20, 0, 20, 20, 20, 20);
+        Checkpoints = new List<Checkpoint>(); // dont forget to add f at the end of each number
+        Checkpoint ck1 = new Checkpoint("ck1",24.29f, 0, 0, 0, 24.9f, 0, 24.9f, 0);
+        Checkpoint ck2 = new Checkpoint("ck2",0, 23.21f, 24.29f, 0, 24.9f, 23.21f, 0, 0);
+        Checkpoint ck3 = new Checkpoint("ck3", 0, 0, 17.1f, 23.21f, 17.1f, 23.21f, 0, 23.21f);
+        Checkpoint ck4 = new Checkpoint("ck4", 17.1f, 0, 0, 0, 17.1f, 0, 17.1f, 0);
+
         Checkpoints.Add(ck1);
         Checkpoints.Add(ck2);
+        Checkpoints.Add(ck3);
+        Checkpoints.Add(ck4);
+
         attack = 0;
         direction = -2;
         rnd = new System.Random();
@@ -60,10 +66,13 @@ internal class Attack_mechanics : MonoBehaviour {
         int attacktype = rnd.Next(1,21);
         int RWattack = rnd.Next(1, 5);
         int RCattack = rnd.Next(1, 3);
+        int RCDattack = rnd.Next(1, 3);
 
-        if ((charge > 100 || attack == 1) && cooldown == 0)
+        //_____________________________________________________________________________________________________________________________________________________________________________________________________
+
+        if (charge >= 100 || attack == 1)
         {
-            if (((direction == -1 && SWattack == 0 && CDattack == 0) || CPattack == 1) && cooldown == 0) //checkpoint attack
+            if ((direction == -1 && SWattack == 0 && CDattack == 0) || CPattack == 1) //checkpoint attack
             {
                 CPattack = 1;
                 if (attack == 0)
@@ -78,7 +87,7 @@ internal class Attack_mechanics : MonoBehaviour {
                     else if ( RCattack == 2)
                     {
                         Worm.transform.position = new Vector3(checkpos.x, checkpos.y - Afrom, checkpos.z);
-                        Worm.transform.rotation = new Quaternion(0, 0, 0, 0);
+                        Worm.transform.rotation = new Quaternion(0, 180, 0, 0);
                         attack = 1;
                         Adirection = 2;
                     }
@@ -92,10 +101,8 @@ internal class Attack_mechanics : MonoBehaviour {
                 {
                     Worm.transform.position = new Vector3(checkpos.x, Worm.transform.position.y + (Time.deltaTime * Aspeed), checkpos.z);
                 }
-                charge = 0;
-                timer -= Time.deltaTime;
 
-                if (((Worm.transform.position.y < (checkpos.y - Adistance) && Adirection == 1) || ((Worm.transform.position.y > (checkpos.y + Adistance)) && Adirection == 2) || timer <= 0))
+                if (((Worm.transform.position.y < (checkpos.y - Adistance) && Adirection == 1) || ((Worm.transform.position.y > (checkpos.y + Adistance)) && Adirection == 2)) || timer <= 0)
                 {
                     //make worm disappear
                     attack = 0;
@@ -104,6 +111,8 @@ internal class Attack_mechanics : MonoBehaviour {
                     timer = reset;
                 }
             }
+
+            //_____________________________________________________________________________________________________________________________________________________________________________________________________
 
             if ((attacktype < 1 || SWattack == 1) && cooldown == 0) //corridor wall to wall attack
             {
@@ -194,8 +203,6 @@ internal class Attack_mechanics : MonoBehaviour {
                 {
                     Worm.transform.position = new Vector3(Worm.transform.position.x + (Time.deltaTime * Aspeed), Worm.transform.position.y, Worm.transform.position.z);
                 }
-                charge = 0;
-                timer -= Time.deltaTime;
 
                 if (((Worm.transform.position.x > (transform.position.x + Adistance) && Adirection == 0) || (Worm.transform.position.z > (transform.position.z + Adistance) && Adirection == 1) || (Worm.transform.position.x < (transform.position.x - Adistance) && Adirection == 2) || (Worm.transform.position.z < (transform.position.z - Adistance) && Adirection == 3)) || timer <= 0)
                 {
@@ -207,24 +214,41 @@ internal class Attack_mechanics : MonoBehaviour {
 
             }
 
+
+            //__________________________________________________________________________________________________________________________________________________________________________________________________________________
+
             if ((attacktype >= 2 || CDattack == 1) && cooldown == 0)
             {
+                //int RCDattack = rnd.Next(1, 3);
                 CDattack = 1;
                 if (attack == 0)
                 {
                     if (direction == 0 || direction == 2)
                     {
-                        int Dpath = currentCheckpoint.PDistOne;
-                        int pathD = Dpath - currentCheckpoint.pathOne; //left to right
-                        Worm.transform.position = new Vector3(checkpos.x + Dpath +  Afrom, checkpos.y, checkpos.z); //work position out
-                        Worm.transform.rotation = new Quaternion(0, 0, 90, 90);
-                        Adirection = 2;
+                        float Dpath = currentCheckpoint.DistanceOnPathOne; //west to east
+                        float pathD = currentCheckpoint.PathOneDistance; //west to east
+
+                        if (RCDattack == 1) //+X
+                        {
+                            Worm.transform.position = new Vector3(checkpos.x + Dpath + Afrom, checkpos.y, checkpos.z);
+                            Worm.transform.rotation = new Quaternion(0, 0, -90, 90);
+                            Adirection = 0;
+                        }
+                        else if (RCDattack == 2) //-X
+                        {
+                            Worm.transform.position = new Vector3(checkpos.x - Dpath - Afrom, checkpos.y, checkpos.z);
+                            Worm.transform.rotation = new Quaternion(0, 0, 90, 90);
+                            Adirection = 2;
+                        }
+
                     }
                     else if (direction == 1 || direction == 3)
                     {
-                        int Dpath = currentCheckpoint.PDistTwo;
-                        int pathD = Dpath - currentCheckpoint.pathTwo; //up to down
-                        Worm.transform.position = new Vector3(checkpos.x, checkpos.y, checkpos.z + Dpath + Afrom); //work position out
+                        float Dpath = currentCheckpoint.DistanceOnPathTwo; //north to south
+                        float pathD = currentCheckpoint.PathTwoDistance; //north to south
+
+
+                        Worm.transform.position = new Vector3(checkpos.x, checkpos.y, checkpos.z + Dpath + Afrom);
                         Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
                         Adirection = 1;
                     }
@@ -247,8 +271,6 @@ internal class Attack_mechanics : MonoBehaviour {
                 {
                     Worm.transform.position = new Vector3(Worm.transform.position.x + (Time.deltaTime * Aspeed), Worm.transform.position.y, Worm.transform.position.z);
                 }
-                charge = 0;
-                timer -= Time.deltaTime;
 
                 if (((Worm.transform.position.x > (transform.position.x + Adistance) && Adirection == 0) || (Worm.transform.position.z > (transform.position.z + Adistance) && Adirection == 1) || (Worm.transform.position.x < (transform.position.x - Adistance) && Adirection == 2) || (Worm.transform.position.z < (transform.position.z - Adistance) && Adirection == 3)) || timer <= 0)
                 {
@@ -261,18 +283,15 @@ internal class Attack_mechanics : MonoBehaviour {
             }
 
 
-
+            cooldown = 0;
+            timer -= Time.deltaTime;
+            charge = 0;
 
         }
 
-        cooldown = 0;
-
-	}
-
-    private void FixedUpdate()
-    {
-        
     }
+
+    //_____________________________________________________________________________________________________________________________________________________________________________________________________
 
     private void OnTriggerEnter(Collider other)
     {
@@ -280,6 +299,7 @@ internal class Attack_mechanics : MonoBehaviour {
             if (other.name.Contains(ck.name))
             {
                 direction = -1;
+                distance = 0;
                 currentCheckpoint = ck;
                 checkpos = other.transform.position;
             }
@@ -288,12 +308,12 @@ internal class Attack_mechanics : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        leaveE = other.transform.position.x - exit;
-        leaveW = other.transform.position.x + exit;
+        leaveW = other.transform.position.x - exit;
+        leaveE = other.transform.position.x + exit;
         leaveN = other.transform.position.z + exit;
         leaveS = other.transform.position.z - exit;
 
-        if (currX > leaveW) //west
+        if (currX > leaveE) //west
         {
             direction = 0;
         }
@@ -303,7 +323,7 @@ internal class Attack_mechanics : MonoBehaviour {
             direction = 1;
         }
 
-        if (currX < leaveE) //east
+        if (currX < leaveW) //east
         {
             direction = 2;
         }
@@ -322,24 +342,24 @@ internal class Attack_mechanics : MonoBehaviour {
 /// </summary>
 class Checkpoint 
 {
-    public int[] B = { 0, 0, 0, 0 };
+    public float[] B = { 0, 0, 0, 0 };
 
-    public Checkpoint(string a,int w, int n, int e, int s, int PDO, int PDT, int DPO, int DPT)
+    public Checkpoint(string Name,float west, float north, float east, float south, float POD, float PTD, float DPO, float DPT)
     {
-        name = a;
-        B[0] = w;
-        B[1] = n;
-        B[2] = e;
-        B[3] = s;
-        pathOne = PDO;
-        pathTwo = PDT;
-        PDistOne = DPO;
-        PDistTwo = DPT;
+        name = Name;
+        B[0] = east;
+        B[1] = north;
+        B[2] = west;
+        B[3] = south;
+        PathOneDistance = POD;
+        PathTwoDistance = PTD;
+        DistanceOnPathOne = DPO;
+        DistanceOnPathTwo = DPT;
     }
 
     public string name;
-    public int pathOne;
-    public int pathTwo;
-    public int PDistOne; // left to right
-    public int PDistTwo;
+    public float PathOneDistance;
+    public float PathTwoDistance;
+    public float DistanceOnPathOne; // left to right
+    public float DistanceOnPathTwo;
 }
