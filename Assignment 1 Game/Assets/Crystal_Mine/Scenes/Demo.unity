@@ -3289,12 +3289,13 @@ MonoBehaviour:
   CPattack: 0
   SWattack: 0
   CDattack: 0
-  Adistance: 10
+  Adistance: 15
   Adirection: 0
   Afrom: 20
   cooldown: 0
   timer: 7
   reset: 7
+  RCD: 0
 --- !u!1001 &313943254
 Prefab:
   m_ObjectHideFlags: 0
@@ -11806,7 +11807,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 310825794}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.2, y: -4.9, z: 45.5}
+  m_LocalPosition: {x: -3.4, y: -4.9, z: 45.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 816543572}
@@ -18101,7 +18102,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1520696581}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
