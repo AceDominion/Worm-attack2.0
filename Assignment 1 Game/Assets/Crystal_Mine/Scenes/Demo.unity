@@ -3285,16 +3285,16 @@ MonoBehaviour:
   checkpos: {x: 0, y: 0, z: 0}
   Worm: {fileID: 1520696581}
   attack: 0
-  Aspeed: 10
+  Aspeed: 12
   CPattack: 0
   SWattack: 0
   CDattack: 0
   Adistance: 15
   Adirection: 0
-  Afrom: 20
+  Afrom: 15
   cooldown: 0
-  timer: 7
-  reset: 7
+  timer: 3
+  reset: 3
   RCD: 0
 --- !u!1001 &313943254
 Prefab:
@@ -11807,7 +11807,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 310825794}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.4, y: -4.9, z: 45.5}
+  m_LocalPosition: {x: -3.4, y: -4.9, z: 45.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 816543572}
@@ -18122,7 +18122,7 @@ Transform:
   m_GameObject: {fileID: 1520696581}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1.03, y: 18.22, z: 29.13}
-  m_LocalScale: {x: 5, y: 13, z: 5}
+  m_LocalScale: {x: 5, y: 15, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
