@@ -1,0 +1,276 @@
+fileFormatVersion: 2
+guid: b51f6d917a98ff94ea0f51bb07db86f4
+timeCreated: 1539818257
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Birth 001
+    100002: Box002
+    100004: Box004
+    100006: Box005
+    100008: Box006
+    100010: Box007
+    100012: Box009
+    100014: Box010
+    100016: Box011
+    100018: Box012
+    100020: Box013
+    100022: Box014
+    100024: Box015
+    100026: Box016
+    100028: Box017
+    100030: Box018
+    100032: Cone002
+    100034: Cone003
+    100036: Cone004
+    100038: Cone005
+    100040: Cone006
+    100042: Cone007
+    100044: Cone008
+    100046: Cone009
+    100048: Cone010
+    100050: Cone011
+    100052: Cone012
+    100054: Cone013
+    100056: Display 001
+    100058: Display 002
+    100060: Event 001
+    100062: Event 002
+    100064: feather
+    100066: feathers
+    100068: loop
+    100070: ocone
+    100072: Omni001
+    100074: PhotometricLight001
+    100076: Position Icon 001
+    100078: Render 001
+    100080: Rotation 001
+    100082: Shape 001
+    100084: Speed 001
+    100086: tot
+    100088: //RootNode
+    400000: Birth 001
+    400002: Box002
+    400004: Box004
+    400006: Box005
+    400008: Box006
+    400010: Box007
+    400012: Box009
+    400014: Box010
+    400016: Box011
+    400018: Box012
+    400020: Box013
+    400022: Box014
+    400024: Box015
+    400026: Box016
+    400028: Box017
+    400030: Box018
+    400032: Cone002
+    400034: Cone003
+    400036: Cone004
+    400038: Cone005
+    400040: Cone006
+    400042: Cone007
+    400044: Cone008
+    400046: Cone009
+    400048: Cone010
+    400050: Cone011
+    400052: Cone012
+    400054: Cone013
+    400056: Display 001
+    400058: Display 002
+    400060: Event 001
+    400062: Event 002
+    400064: feather
+    400066: feathers
+    400068: loop
+    400070: ocone
+    400072: Omni001
+    400074: PhotometricLight001
+    400076: Position Icon 001
+    400078: Render 001
+    400080: Rotation 001
+    400082: Shape 001
+    400084: Speed 001
+    400086: tot
+    400088: //RootNode
+    2100000: No Name
+    2300000: Box002
+    2300002: Box004
+    2300004: Box005
+    2300006: Box006
+    2300008: Box007
+    2300010: Box009
+    2300012: Box010
+    2300014: Box011
+    2300016: Box012
+    2300018: Box013
+    2300020: Box014
+    2300022: Box015
+    2300024: Box016
+    2300026: Box017
+    2300028: Box018
+    2300030: Cone002
+    2300032: Cone003
+    2300034: Cone004
+    2300036: Cone005
+    2300038: Cone006
+    2300040: Cone007
+    2300042: Cone008
+    2300044: Cone009
+    2300046: Cone010
+    2300048: Cone011
+    2300050: Cone012
+    2300052: Cone013
+    2300054: feather
+    2300056: feathers
+    2300058: loop
+    2300060: ocone
+    2300062: tot
+    3300000: Box002
+    3300002: Box004
+    3300004: Box005
+    3300006: Box006
+    3300008: Box007
+    3300010: Box009
+    3300012: Box010
+    3300014: Box011
+    3300016: Box012
+    3300018: Box013
+    3300020: Box014
+    3300022: Box015
+    3300024: Box016
+    3300026: Box017
+    3300028: Box018
+    3300030: Cone002
+    3300032: Cone003
+    3300034: Cone004
+    3300036: Cone005
+    3300038: Cone006
+    3300040: Cone007
+    3300042: Cone008
+    3300044: Cone009
+    3300046: Cone010
+    3300048: Cone011
+    3300050: Cone012
+    3300052: Cone013
+    3300054: feather
+    3300056: feathers
+    3300058: loop
+    3300060: ocone
+    3300062: tot
+    4300000: tot
+    4300002: Box002
+    4300004: Box004
+    4300006: loop
+    4300008: Box005
+    4300010: Box006
+    4300012: Box007
+    4300014: Cone003
+    4300016: Cone004
+    4300018: ocone
+    4300020: Cone005
+    4300022: Cone006
+    4300024: Cone007
+    4300026: Cone008
+    4300028: Cone009
+    4300030: Cone010
+    4300032: Cone011
+    4300034: Cone012
+    4300036: Cone013
+    4300038: Box009
+    4300040: feather
+    4300042: Box014
+    4300044: Box015
+    4300046: Box016
+    4300048: Box017
+    4300050: Box018
+    4300052: Cone002
+    4300054: feathers
+    4300056: Box010
+    4300058: Box011
+    4300060: Box012
+    4300062: Box013
+    10800000: Omni001
+    10800002: PhotometricLight001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
