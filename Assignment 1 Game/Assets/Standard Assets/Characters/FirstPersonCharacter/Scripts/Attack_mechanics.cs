@@ -83,21 +83,21 @@ internal class Attack_mechanics : MonoBehaviour {
         Checkpoint ck40 = new Checkpoint("ck40", 2f, 1.5f, 1.5f, 0, 11f, 3f, 2f, 3f);
         Checkpoint ck41 = new Checkpoint("ck41", 0, 3f, 2f, 0, 11f, 3f, 0, 3f);
         Checkpoint ck42 = new Checkpoint("ck42", 0, 0, 5.5f, 3f, 5.5f, 3f, 0, 0);
-        Checkpoint ck43 = new Checkpoint("ck43", 5.5f, 11.5f, 0, 0, 5.5f, 0, 24.9f, 0);
-        Checkpoint ck44 = new Checkpoint("ck44", 0, 23.21f, 24.29f, 0, 24.9f, 23.21f, 0, 0);
-        Checkpoint ck45 = new Checkpoint("ck45", 0, 0, 17.1f, 23.21f, 17.1f, 23.21f, 0, 23.21f);
-        Checkpoint ck46 = new Checkpoint("ck46", 17.1f, 0, 0, 0, 17.1f, 0, 17.1f, 0);
-        Checkpoint ck47 = new Checkpoint("ck47", 0, 23.21f, 24.29f, 0, 24.9f, 23.21f, 0, 0);
-        Checkpoint ck48 = new Checkpoint("ck48", 0, 0, 17.1f, 23.21f, 17.1f, 23.21f, 0, 23.21f);
-        Checkpoint ck49 = new Checkpoint("ck49", 17.1f, 0, 0, 0, 17.1f, 0, 17.1f, 0);
-        Checkpoint ck50 = new Checkpoint("ck50", 24.29f, 0, 0, 0, 24.9f, 0, 24.9f, 0);
-        Checkpoint ck51 = new Checkpoint("ck51", 0, 23.21f, 24.29f, 0, 24.9f, 23.21f, 0, 0);
-        Checkpoint ck52 = new Checkpoint("ck52", 0, 0, 17.1f, 23.21f, 17.1f, 23.21f, 0, 23.21f);
-        Checkpoint ck53 = new Checkpoint("ck53", 17.1f, 0, 0, 0, 17.1f, 0, 17.1f, 0);
-        Checkpoint ck54 = new Checkpoint("ck54", 0, 23.21f, 24.29f, 0, 24.9f, 23.21f, 0, 0);
-        Checkpoint ck55 = new Checkpoint("ck55", 0, 0, 17.1f, 23.21f, 17.1f, 23.21f, 0, 23.21f);
-        Checkpoint ck56 = new Checkpoint("ck56", 17.1f, 0, 0, 0, 17.1f, 0, 17.1f, 0);
-        Checkpoint ck57 = new Checkpoint("ck57", 24.29f, 0, 0, 0, 24.9f, 0, 24.9f, 0);
+        Checkpoint ck43 = new Checkpoint("ck43", 5.5f, 11.5f, 0, 0, 5.5f, 11.5f, 5.5f, 11.5f);
+        Checkpoint ck44 = new Checkpoint("ck44", 12f, 0, 0, 11.5f, 12f, 11.5f, 12f, 0);
+        Checkpoint ck45 = new Checkpoint("ck45", 0, 0, 12f, 5f, 12f, 5f, 0, 0);
+        Checkpoint ck46 = new Checkpoint("ck46", 7f, 8f, 0, 0, 7f, 8f, 7f, 8f);
+        Checkpoint ck47 = new Checkpoint("ck47", 0, 0, 8f, 8f, 8f, 8f, 0, 0);
+        Checkpoint ck48 = new Checkpoint("ck48", 1.5f, 0, 7.5f, 2f, 11f, 2f, 3.5f, 0);
+        Checkpoint ck49 = new Checkpoint("ck49", 7.5f, 6.5f, 0, 0, 11f, 6.5f, 11f, 6.5f);
+        Checkpoint ck50 = new Checkpoint("ck50", 0, 0, 5f, 6.5f, 5f, 6.5f, 0, 0);
+        Checkpoint ck51 = new Checkpoint("ck51", 5f, 0, 0, 6.5f, 5f, 6.5f, 5f, 0);
+        Checkpoint ck52 = new Checkpoint("ck52", 0, 6.5f, 2f, 0, 2f, 6.5f, 0, 6.5f);
+        Checkpoint ck53 = new Checkpoint("ck53", 8.5f, 2f, 12.5f, 0, 27f, 2f, 8.5f, 2f);
+        Checkpoint ck54 = new Checkpoint("ck54", 12.5f, 4f, 2f, 0, 27f, -1, 21f, -1); // NULL here = -1
+        Checkpoint ck55 = new Checkpoint("ck55", 2f, 4f, 4f, 0, 27f, -1, 23f, -1); // NULL here = -1
+        Checkpoint ck56 = new Checkpoint("ck56", 0, 1f, 7f, 0, 7f, 1f, 0, 1f);
+        Checkpoint ck57 = new Checkpoint("ck57", 0, 0, 6f, 8.5f, 8f, 18.5f, 6f, 0);
 
         Checkpoints.Add(ck1);
         Checkpoints.Add(ck2);
