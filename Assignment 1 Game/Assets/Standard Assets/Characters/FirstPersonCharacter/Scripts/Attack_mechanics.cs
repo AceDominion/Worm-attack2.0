@@ -311,21 +311,23 @@ internal class Attack_mechanics : MonoBehaviour {
                         float Dpath = currentCheckpoint.DistanceOnPathOne; //west to east
                         float pathD = currentCheckpoint.PathOneDistance; //west to east
 
+                        //Checkpoint ck44 = new Checkpoint("ck44", 12f, 0, 0, 11.5f, 12f, 11.5f, 12f, 0);
+
                         if (Dpath == 0 && RCDattack == 2) // 2 = + and 1 = -
                         {
                             correction = 0;
                         }
                         else if (Dpath == 0 && RCDattack == 1)
                         {
-                            correction = pathD;
+                            correction = pathD * 2;
                         }
                         else if (Dpath > 0 && RCDattack == 2)
                         {
-                            correction = Dpath;
+                            correction = Dpath * 2;
                         }
                         else if (Dpath > 0 && RCDattack == 1)
                         {
-                            correction = pathD - Dpath;
+                            correction = (pathD - Dpath) * 2;
                         }
 
                         if (direction == 0 || direction == 2)
@@ -350,21 +352,23 @@ internal class Attack_mechanics : MonoBehaviour {
                         float pathD = currentCheckpoint.PathTwoDistance; //north to south
                         float correction = 0;
 
+                        //Checkpoint ck2 = new Checkpoint("ck2",0, 5f, 1.5f, 0, 1.5f, 5f, 0, 5f);
+
                         if (Dpath == 0 && RCDattack == 1) // 2 = + and 1 = -
                         {
                             correction = 0;
                         }
                         else if (Dpath == 0 && RCDattack == 2)
                         {
-                            correction = pathD;
-                        }
-                        else if (Dpath > 0 && RCDattack == 2)
-                        {
-                            correction = Dpath;
+                            correction = pathD * 2;
                         }
                         else if (Dpath > 0 && RCDattack == 1)
                         {
-                            correction = pathD - Dpath;
+                            correction = Dpath * 2;
+                        }
+                        else if (Dpath > 0 && RCDattack == 2)
+                        {
+                            correction = (pathD - Dpath) * 2;
                         }
 
                         if (RCDattack == 2) //-Z
@@ -375,7 +379,7 @@ internal class Attack_mechanics : MonoBehaviour {
                         }
                         else if (RCDattack == 1) //+Z
                         {
-                            Worm.transform.position = new Vector3(checkpos.x, checkpos.y - drop, checkpos.z + correction + Afrom + buffer);
+                            Worm.transform.position = new Vector3(checkpos.x, checkpos.y - drop, checkpos.z + correction + Afrom);
                             Worm.transform.rotation = new Quaternion(0, 180, 0, 0);
                             Adirection = 3;
                         }
@@ -399,6 +403,7 @@ internal class Attack_mechanics : MonoBehaviour {
                 {
                     Worm.transform.position = new Vector3(Worm.transform.position.x, Worm.transform.position.y, Worm.transform.position.z - (Time.deltaTime * Aspeed));
                 }
+
 
                 if (((Worm.transform.position.x > (transform.position.x + Adistance) && Adirection == 0) || (Worm.transform.position.z > (transform.position.z + Adistance) && Adirection == 1) || (Worm.transform.position.x < (transform.position.x - Adistance) && Adirection == 2) || (Worm.transform.position.z < (transform.position.z - Adistance) && Adirection == 3)) || timer <= 0)
                 {
