@@ -41,10 +41,9 @@ internal class Attack_mechanics : MonoBehaviour {
     System.Random rnd;
 
 
-    // Use this for initialization
     void Start ()
     {
-        Checkpoints = new List<Checkpoint>(); // dont forget to add f at the end of each number
+        Checkpoints = new List<Checkpoint>();
         Checkpoint ck1 = new Checkpoint("ck1",1.5f, 3.5f, 0, 0, 1.5f, 3.5f, 1.5f, 3.5f);
         Checkpoint ck2 = new Checkpoint("ck2",0, 5f, 1.5f, 0, 1.5f, 5f, 0, 5f);
         Checkpoint ck3 = new Checkpoint("ck3", 0, 0, 9f, 3.5f, 9f, 3.5f, 0, 0);
@@ -167,7 +166,6 @@ internal class Attack_mechanics : MonoBehaviour {
 
     }
 
-    // Update is called once per frame
     void Update ()
     {
         currZ = transform.position.z;
