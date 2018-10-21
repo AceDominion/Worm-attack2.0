@@ -8,8 +8,8 @@ public class WebDestry : MonoBehaviour
     // Use this for initialization
 
     public GameObject remains; // this is the prefab, assigned manually in the editor
-    public GameObject theBoy;
-    public GameObject theWeb;
+    //public GameObject theBoy;
+    //public GameObject theWeb;
 
     void Start()
     {
@@ -17,11 +17,11 @@ public class WebDestry : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void OnTriggerStay(Collider plyr)
     {
-            if (Input.GetMouseButtonDown(0) & theBoy.transform.position.x < theWeb.transform.position.x + 2f)
-            {
-                Instantiate(remains, gameObject.transform.position, gameObject.transform.rotation);
+        if (plyr.tag == "Player" && Input.GetMouseButtonDown(0))
+        {
+            Instantiate(remains, gameObject.transform.position, gameObject.transform.rotation);
                 Destroy(gameObject);
                 Destroy(remains, 2.0f);
             }
