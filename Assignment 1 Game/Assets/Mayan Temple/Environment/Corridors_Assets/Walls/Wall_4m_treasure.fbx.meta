@@ -1,0 +1,116 @@
+fileFormatVersion: 2
+guid: bb8dbde1f1cc16d478d28e6f65797782
+timeCreated: 1433447191
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Geom_Wall_4m_treasure
+    100002: polySurface177
+    100004: polySurface178
+    100006: polySurface179
+    100008: polySurface180
+    100010: polySurface181
+    100012: polySurface182
+    100014: transform12
+    100016: transform13
+    100018: transform14
+    100020: transform15
+    100022: transform16
+    100024: transform17
+    100026: transform18
+    100028: Wall_4m__polySurface35
+    100030: //RootNode
+    100032: Secret_Brick
+    100034: Shadow_Caster_Wall_4m3
+    400000: Geom_Wall_4m_treasure
+    400002: polySurface177
+    400004: polySurface178
+    400006: polySurface179
+    400008: polySurface180
+    400010: polySurface181
+    400012: polySurface182
+    400014: transform12
+    400016: transform13
+    400018: transform14
+    400020: transform15
+    400022: transform16
+    400024: transform17
+    400026: transform18
+    400028: Wall_4m__polySurface35
+    400030: //RootNode
+    400032: Secret_Brick
+    400034: Shadow_Caster_Wall_4m3
+    2300000: Geom_Wall_4m_treasure
+    2300002: Secret_Brick
+    2300004: Shadow_Caster_Wall_4m3
+    3300000: Geom_Wall_4m_treasure
+    3300002: Secret_Brick
+    3300004: Shadow_Caster_Wall_4m3
+    4300000: Geom_Wall_4m_treasure
+    4300002: Secret_Brick
+    4300004: Shadow_Caster_Wall_4m3
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

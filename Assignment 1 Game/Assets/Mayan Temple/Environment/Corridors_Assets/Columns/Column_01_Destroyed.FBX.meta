@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: 168603702ba5c4542a6e60c40bd2e082
+timeCreated: 1433888654
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Geom_Column
+    100004: Geom_Column_v_006
+    100006: Geom_Column_v_010
+    100008: Geom_Column_v_035
+    100010: Geom_Column_v_036
+    100012: Geom_Column_v_042
+    100014: Geom_Column_v_044
+    100016: Geom_Column_v_045
+    100018: Geom_Column_v_048
+    100020: Geom_Column_v_061
+    100022: Geom_Column_v_063
+    100024: Geom_Column_v_064
+    100026: Geom_Column_v_066
+    100028: Geom_Column_v_076
+    100030: Geom_Column_v_078
+    100032: Geom_Column_v_082
+    100034: Geom_Column_v_083
+    400000: //RootNode
+    400002: Geom_Column
+    400004: Geom_Column_v_006
+    400006: Geom_Column_v_010
+    400008: Geom_Column_v_035
+    400010: Geom_Column_v_036
+    400012: Geom_Column_v_042
+    400014: Geom_Column_v_044
+    400016: Geom_Column_v_045
+    400018: Geom_Column_v_048
+    400020: Geom_Column_v_061
+    400022: Geom_Column_v_063
+    400024: Geom_Column_v_064
+    400026: Geom_Column_v_066
+    400028: Geom_Column_v_076
+    400030: Geom_Column_v_078
+    400032: Geom_Column_v_082
+    400034: Geom_Column_v_083
+    2300000: Geom_Column
+    2300002: Geom_Column_v_006
+    2300004: Geom_Column_v_010
+    2300006: Geom_Column_v_035
+    2300008: Geom_Column_v_036
+    2300010: Geom_Column_v_042
+    2300012: Geom_Column_v_044
+    2300014: Geom_Column_v_045
+    2300016: Geom_Column_v_048
+    2300018: Geom_Column_v_061
+    2300020: Geom_Column_v_063
+    2300022: Geom_Column_v_064
+    2300024: Geom_Column_v_066
+    2300026: Geom_Column_v_076
+    2300028: Geom_Column_v_078
+    2300030: Geom_Column_v_082
+    2300032: Geom_Column_v_083
+    3300000: Geom_Column
+    3300002: Geom_Column_v_006
+    3300004: Geom_Column_v_010
+    3300006: Geom_Column_v_035
+    3300008: Geom_Column_v_036
+    3300010: Geom_Column_v_042
+    3300012: Geom_Column_v_044
+    3300014: Geom_Column_v_045
+    3300016: Geom_Column_v_048
+    3300018: Geom_Column_v_061
+    3300020: Geom_Column_v_063
+    3300022: Geom_Column_v_064
+    3300024: Geom_Column_v_066
+    3300026: Geom_Column_v_076
+    3300028: Geom_Column_v_078
+    3300030: Geom_Column_v_082
+    3300032: Geom_Column_v_083
+    4300000: Geom_Column
+    4300002: Geom_Column_v_006
+    4300004: Geom_Column_v_010
+    4300006: Geom_Column_v_035
+    4300008: Geom_Column_v_036
+    4300010: Geom_Column_v_042
+    4300012: Geom_Column_v_044
+    4300014: Geom_Column_v_045
+    4300016: Geom_Column_v_048
+    4300018: Geom_Column_v_061
+    4300020: Geom_Column_v_063
+    4300022: Geom_Column_v_064
+    4300024: Geom_Column_v_066
+    4300026: Geom_Column_v_076
+    4300028: Geom_Column_v_078
+    4300030: Geom_Column_v_082
+    4300032: Geom_Column_v_083
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
