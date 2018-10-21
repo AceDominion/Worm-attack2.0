@@ -7,9 +7,14 @@ public class ManageLevelMenu : MonoBehaviour {
     public Button b1;
     public Button b2;
     string level = "aztec";
+    public GameObject aztecPic;
+    public GameObject cavePic;
+    Vector3 placement
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+        placement = aztecPic.transform.position;
+        Quaternion rotational = aztecPic.transform.rotation;
         Button left = b1.GetComponent<Button>();
         Button right = b2.GetComponent<Button>();
 
@@ -31,23 +36,27 @@ public class ManageLevelMenu : MonoBehaviour {
         if (level == "aztec")
         {
             level = "cave";
+            ClearCreated(false);
             Debug.Log("Cave");
         }
         else
         {
             level = "aztec";
+            ClearCreated(true);
             Debug.Log("Aztec");
         }
     }
-    void clear(bool aztec)
+    void ClearCreated(bool aztec)
     {
         if (aztec)
         {
-
+            aztecPic.transform.Translate(placement);
+            cavePic.transform.Translate(Vector3.forward*5);
         }
         else
         {
-
+            cavePic.transform.Translate(placement);
+            aztecPic.transform.Translate(Vector3.forward * 5);
         }
     }
     
