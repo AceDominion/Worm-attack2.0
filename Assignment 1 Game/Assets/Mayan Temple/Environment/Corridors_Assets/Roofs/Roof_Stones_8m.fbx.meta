@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: 6791254f50da9874caae7f8bbe9f7b47
+timeCreated: 1433455451
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Geom_Roof_Border
+    100002: Geom_Stone_Roof1
+    100004: //RootNode
+    100006: Stone_Roof_1
+    100008: Stone_Roof_2
+    100010: Stone_Roof_3
+    100012: Stone_Roof_4
+    100014: Stone_Roof_5
+    100016: Shadow_Caster_Roof_4m
+    100018: Shadow_Caster_Roof_4m1
+    100020: Shadow_Caster_Roof_4m2
+    100022: Shadow_Caster_Roof_4m3
+    100024: Roof_Shadow_Casters
+    400000: Geom_Roof_Border
+    400002: Geom_Stone_Roof1
+    400004: //RootNode
+    400006: Stone_Roof_1
+    400008: Stone_Roof_2
+    400010: Stone_Roof_3
+    400012: Stone_Roof_4
+    400014: Stone_Roof_5
+    400016: Shadow_Caster_Roof_4m
+    400018: Shadow_Caster_Roof_4m1
+    400020: Shadow_Caster_Roof_4m2
+    400022: Shadow_Caster_Roof_4m3
+    400024: Roof_Shadow_Casters
+    2300000: Geom_Roof_Border
+    2300002: Stone_Roof_1
+    2300004: Stone_Roof_2
+    2300006: Stone_Roof_3
+    2300008: Stone_Roof_4
+    2300010: Stone_Roof_5
+    2300012: Shadow_Caster_Roof_4m
+    2300014: Shadow_Caster_Roof_4m1
+    2300016: Shadow_Caster_Roof_4m2
+    2300018: Shadow_Caster_Roof_4m3
+    3300000: Geom_Roof_Border
+    3300002: Stone_Roof_1
+    3300004: Stone_Roof_2
+    3300006: Stone_Roof_3
+    3300008: Stone_Roof_4
+    3300010: Stone_Roof_5
+    3300012: Shadow_Caster_Roof_4m
+    3300014: Shadow_Caster_Roof_4m1
+    3300016: Shadow_Caster_Roof_4m2
+    3300018: Shadow_Caster_Roof_4m3
+    4300000: Stone_Roof_1
+    4300002: Stone_Roof_2
+    4300004: Stone_Roof_3
+    4300006: Stone_Roof_4
+    4300008: Stone_Roof_5
+    4300010: Geom_Roof_Border
+    4300012: Shadow_Caster_Roof_4m
+    4300014: Shadow_Caster_Roof_4m1
+    4300016: Shadow_Caster_Roof_4m2
+    4300018: Shadow_Caster_Roof_4m3
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

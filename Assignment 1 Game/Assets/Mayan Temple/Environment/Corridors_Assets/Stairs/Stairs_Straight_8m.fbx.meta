@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: d2dd8b4cd412dbf4e85d45e9c95ae293
+timeCreated: 1433690261
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Geom_Stairs_8m
+    100002: Geom_Stairs_Roof_Border
+    100004: Geom_Stairs_Roof_Stone_1
+    100006: Geom_Stairs_Roof_Stone_2
+    100008: Geom_Stairs_Roof_Stone_3
+    100010: Geom_Stairs_Roof_Stone_5
+    100012: Geom_Stairs_Roof_Stone_6
+    100014: Geom_Stairs_Roof_Stone_7
+    100016: Geom_Stairs_Roof_Stone_8
+    100018: Geom_Stairs_Sand
+    100020: Geom_Stairs_wall_8m
+    100022: Geom_Stairs_wall_8m_1
+    100024: Stairs_Roof
+    100026: //RootNode
+    100028: Shadow_Caster_Wall_4m
+    100030: Shadow_Caster_Wall_4m1
+    100032: Shadow_Casters_Wall
+    100034: Stairs_shadow_caster1
+    100036: Stairs_shadow_caster2
+    100038: Stairs_shadow_caster3
+    100040: Stairs_shadow_caster4
+    100042: Stairs_shadow_caster5
+    100044: Stairs_shadow_caster6
+    100046: Stairs_shadow_caster7
+    100048: transform11
+    100050: transform12
+    100052: transform13
+    100054: transform14
+    400000: Geom_Stairs_8m
+    400002: Geom_Stairs_Roof_Border
+    400004: Geom_Stairs_Roof_Stone_1
+    400006: Geom_Stairs_Roof_Stone_2
+    400008: Geom_Stairs_Roof_Stone_3
+    400010: Geom_Stairs_Roof_Stone_5
+    400012: Geom_Stairs_Roof_Stone_6
+    400014: Geom_Stairs_Roof_Stone_7
+    400016: Geom_Stairs_Roof_Stone_8
+    400018: Geom_Stairs_Sand
+    400020: Geom_Stairs_wall_8m
+    400022: Geom_Stairs_wall_8m_1
+    400024: Stairs_Roof
+    400026: //RootNode
+    400028: Shadow_Caster_Wall_4m
+    400030: Shadow_Caster_Wall_4m1
+    400032: Shadow_Casters_Wall
+    400034: Stairs_shadow_caster1
+    400036: Stairs_shadow_caster2
+    400038: Stairs_shadow_caster3
+    400040: Stairs_shadow_caster4
+    400042: Stairs_shadow_caster5
+    400044: Stairs_shadow_caster6
+    400046: Stairs_shadow_caster7
+    400048: transform11
+    400050: transform12
+    400052: transform13
+    400054: transform14
+    2300000: Geom_Stairs_8m
+    2300002: Geom_Stairs_Roof_Border
+    2300004: Geom_Stairs_Roof_Stone_1
+    2300006: Geom_Stairs_Roof_Stone_2
+    2300008: Geom_Stairs_Roof_Stone_3
+    2300010: Geom_Stairs_Roof_Stone_5
+    2300012: Geom_Stairs_Roof_Stone_6
+    2300014: Geom_Stairs_Roof_Stone_7
+    2300016: Geom_Stairs_Roof_Stone_8
+    2300018: Geom_Stairs_Sand
+    2300020: Geom_Stairs_wall_8m
+    2300022: Geom_Stairs_wall_8m_1
+    2300024: Shadow_Caster_Wall_4m
+    2300026: Shadow_Caster_Wall_4m1
+    2300028: Stairs_shadow_caster1
+    2300030: Stairs_shadow_caster2
+    2300032: Stairs_shadow_caster7
+    3300000: Geom_Stairs_8m
+    3300002: Geom_Stairs_Roof_Border
+    3300004: Geom_Stairs_Roof_Stone_1
+    3300006: Geom_Stairs_Roof_Stone_2
+    3300008: Geom_Stairs_Roof_Stone_3
+    3300010: Geom_Stairs_Roof_Stone_5
+    3300012: Geom_Stairs_Roof_Stone_6
+    3300014: Geom_Stairs_Roof_Stone_7
+    3300016: Geom_Stairs_Roof_Stone_8
+    3300018: Geom_Stairs_Sand
+    3300020: Geom_Stairs_wall_8m
+    3300022: Geom_Stairs_wall_8m_1
+    3300024: Shadow_Caster_Wall_4m
+    3300026: Shadow_Caster_Wall_4m1
+    3300028: Stairs_shadow_caster1
+    3300030: Stairs_shadow_caster2
+    3300032: Stairs_shadow_caster7
+    4300000: Geom_Stairs_Sand
+    4300002: Geom_Stairs_Roof_Stone_1
+    4300004: Geom_Stairs_Roof_Stone_2
+    4300006: Geom_Stairs_Roof_Stone_8
+    4300008: Geom_Stairs_Roof_Stone_3
+    4300010: Geom_Stairs_Roof_Stone_5
+    4300012: Geom_Stairs_Roof_Stone_6
+    4300014: Geom_Stairs_Roof_Stone_7
+    4300016: Geom_Stairs_Roof_Border
+    4300018: Geom_Stairs_wall_8m
+    4300020: Geom_Stairs_wall_8m_1
+    4300022: Geom_Stairs_8m
+    4300024: Shadow_Caster_Wall_4m1
+    4300026: Shadow_Caster_Wall_4m
+    4300028: Stairs_shadow_caster1
+    4300030: Stairs_shadow_caster2
+    4300032: Stairs_shadow_caster7
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
