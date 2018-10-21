@@ -226,7 +226,7 @@ internal class Attack_mechanics : MonoBehaviour {
 
             //_____________________________________________________________________________________________________________________________________________________________________________________________________
 
-            if ((attacktype == 25 || SWattack == 1) && cooldown == 0) //corridor wall to wall attack
+            if ((attacktype == 25 || SWattack == 1) && cooldown == 0) //corridor wall to wall attack - PACE -> not working and dont know why
             {
                 RCD = 1;
                 SWattack = 1;
