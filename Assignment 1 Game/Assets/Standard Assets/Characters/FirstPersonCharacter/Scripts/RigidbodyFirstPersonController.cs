@@ -62,7 +62,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 get { return m_Running; }
             }
 #endif
+            void OnTriggerEnter(Collider plyr)
+            {
+
+                if (plyr.tag == "Water")
+                {
+                    ForwardSpeed = 1.0f;
+
+                }
+
+            }
+
+
+
         }
+
+
+
 
 
         [Serializable]
