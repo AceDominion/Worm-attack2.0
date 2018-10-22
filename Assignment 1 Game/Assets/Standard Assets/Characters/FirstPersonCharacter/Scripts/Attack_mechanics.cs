@@ -333,13 +333,13 @@ internal class Attack_mechanics : MonoBehaviour {
                             if (RCDattack == 2) //-X
                             {
                                 Worm.transform.position = new Vector3(checkpos.x - correction - Afrom, checkpos.y - drop, checkpos.z);
-                                Worm.transform.rotation = new Quaternion(0, 90, 0, 90);
+                                Worm.transform.rotation = new Quaternion(0, 0, 0, 0);
                                 Adirection = 0;
                             }
                             else if (RCDattack == 1) //+X
                             {
                                 Worm.transform.position = new Vector3(checkpos.x + correction + Afrom, checkpos.y - drop, checkpos.z);
-                                Worm.transform.rotation = new Quaternion(0, -90, 0, 90);
+                                Worm.transform.rotation = new Quaternion(0, 270, 0, 270);
                                 Adirection = 2;
                             }
                         }
@@ -372,7 +372,7 @@ internal class Attack_mechanics : MonoBehaviour {
                         if (RCDattack == 2) //-Z
                         {
                             Worm.transform.position = new Vector3(checkpos.x, checkpos.y - drop, checkpos.z - correction - Afrom);
-                            Worm.transform.rotation = new Quaternion(0, 0, 0, 0);
+                            Worm.transform.rotation = new Quaternion(0, 0, 0, 180);
                             Adirection = 1;
                         }
                         else if (RCDattack == 1) //+Z
