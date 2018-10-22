@@ -11,8 +11,10 @@ public class WebDestry : MonoBehaviour
     //public GameObject theBoy;
     //public GameObject theWeb;
 
+
     void Start()
     {
+		
 
     }
 
@@ -24,6 +26,7 @@ public class WebDestry : MonoBehaviour
             Instantiate(remains, gameObject.transform.position, gameObject.transform.rotation);
                 Destroy(gameObject);
                 Destroy(remains, 2.0f);
+			    
             }
         
 
