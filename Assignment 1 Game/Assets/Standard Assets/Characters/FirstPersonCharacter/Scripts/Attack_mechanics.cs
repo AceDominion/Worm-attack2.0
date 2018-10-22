@@ -224,66 +224,104 @@ internal class Attack_mechanics : MonoBehaviour {
 
             //_____________________________________________________________________________________________________________________________________________________________________________________________________
 
-            if ((attacktype == 25 || SWattack == 1) && cooldown == 0) //corridor wall to wall attack
+            if ((attacktype < 100 || SWattack == 1) && cooldown == 0) //corridor wall to wall attack
             {
-                RCD = 1;
                 SWattack = 1;
                 if (attack == 0)
                 {
-                    RCD = 2;
+                    float AfromTwo = Afrom / 3;
                     if (direction == 0 || direction == 2)
                     {
-                        RCD = 3;
-                        if (RWattack == 1)
+
+                        if (RWattack == 1 || RWattack == 2 || RWattack == 3 || RWattack == 4)
                         {
-                            Worm.transform.position = new Vector3(transform.position.x, transform.position.y - Afrom, transform.position.z);// up
-                            Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                            Worm.transform.position = new Vector3(transform.position.x, checkpos.y - AfromTwo, checkpos.z);// up
+                            Worm.transform.rotation = new Quaternion(-90, 0, 0, 90);
                             Adirection = 0;
                         }
-                        else if (RWattack == 2)
+                        else if (RWattack == -1)
                         {
-                            Worm.transform.position = new Vector3(transform.position.x, transform.position.y + Afrom, transform.position.z);// down
-                            Worm.transform.rotation = new Quaternion(-90, 0, 0, 90);
+                            Worm.transform.position = new Vector3(transform.position.x, checkpos.y + AfromTwo, checkpos.z);// down
+                            Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
                             Adirection = 1;
                         }
-                        else if (RWattack == 3)
+                        else if (RWattack == -1)
                         {
-                            Worm.transform.position = new Vector3(transform.position.x, transform.position.y - drop, transform.position.z - Afrom);// left
+                            Worm.transform.position = new Vector3(transform.position.x, checkpos.y, checkpos.z - AfromTwo);// left
                             Worm.transform.rotation = new Quaternion(0, 0, 90, 90);
                             Adirection = 2;
                         }
-                        else if (RWattack == 4)
+                        else if (RWattack == -1)
                         {
-                            Worm.transform.position = new Vector3(transform.position.x, transform.position.y - drop, transform.position.z + Afrom);// right
+                            Worm.transform.position = new Vector3(transform.position.x, checkpos.y, checkpos.z + AfromTwo);// right
                             Worm.transform.rotation = new Quaternion(0, 0, -90, 90);
                             Adirection = 3;
                         }
                         attack = 1;
                     }
 
+                    if (direction == 1 || direction == 3)
+                    {
+                        if (RWattack == 1)
+                        {
+                            Worm.transform.position = new Vector3(checkpos.x, checkpos.y - AfromTwo, transform.position.z);// up
+                            Worm.transform.rotation = new Quaternion(-90, 0, 0, 90);
+                            Adirection = 0;
+                        }
+                        else if (RWattack == 2)
+                        {
+                            Worm.transform.position = new Vector3(checkpos.x, checkpos.y + AfromTwo, transform.position.z);// down
+                            Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
+                            Adirection = 1;
+                        }
+                        else if (RWattack == 3)
+                        {
+                            Worm.transform.position = new Vector3(checkpos.x - AfromTwo, checkpos.y, transform.position.z);// left
+                            Worm.transform.rotation = new Quaternion(0, 0, 90, 90);
+                            Adirection = 4;
+                        }
+                        else if (RWattack == 4)
+                        {
+                            Worm.transform.position = new Vector3(checkpos.x + AfromTwo, checkpos.y, transform.position.z);// right
+                            Worm.transform.rotation = new Quaternion(0, 0, -90, 90);
+                            Adirection = 5;
+                        }
+                        attack = 1;
+                    }
+
+
                 }
             
             
 
 
-                if (Adirection == 0)// up
+                if (Adirection == 0)// Y+
                 {
                     Worm.transform.position = new Vector3(Worm.transform.position.x, Worm.transform.position.y + (Time.deltaTime * Aspeed), Worm.transform.position.z);
                 }
-                if (Adirection == 1)// down
+                else if (Adirection == 1)// Y-
                 {
                     Worm.transform.position = new Vector3(Worm.transform.position.x, Worm.transform.position.y - (Time.deltaTime * Aspeed), Worm.transform.position.z);
                 }
-                if (Adirection == 2)
+                else if (Adirection == 2) // Z+
                 {
                     Worm.transform.position = new Vector3(Worm.transform.position.x, Worm.transform.position.y, Worm.transform.position.z + (Time.deltaTime * Aspeed));
                 }
-                if (Adirection == 3)
+                else if (Adirection == 3) // Z-
                 {
                     Worm.transform.position = new Vector3(Worm.transform.position.x, Worm.transform.position.y, Worm.transform.position.z - (Time.deltaTime * Aspeed));
                 }
+                else if (Adirection == 4) // X+
+                {
+                    Worm.transform.position = new Vector3(Worm.transform.position.x + (Time.deltaTime * Aspeed), Worm.transform.position.y, Worm.transform.position.z);
+                }
+                else if (Adirection == 5) // X-
+                {
+                    Worm.transform.position = new Vector3(Worm.transform.position.x - (Time.deltaTime * Aspeed), Worm.transform.position.y, Worm.transform.position.z);
+                }
 
-                if (((Worm.transform.position.y > (transform.position.y + Adistance) && Adirection == 0) || (Worm.transform.position.y > (transform.position.y - Adistance) && Adirection == 1) || (Worm.transform.position.z < (transform.position.z + Adistance) && Adirection == 2) || (Worm.transform.position.z < (transform.position.z - Adistance) && Adirection == 3)) || timer <= 0)
+
+                if (((Worm.transform.position.y > (transform.position.y + Adistance) && Adirection == 0) || (Worm.transform.position.y < (transform.position.y - Adistance) && Adirection == 1) || (Worm.transform.position.z > (transform.position.z + Adistance) && Adirection == 2) || (Worm.transform.position.z < (transform.position.z - Adistance) && Adirection == 3)) || (Worm.transform.position.x > (transform.position.x + Adistance) && Adirection == 4) || (Worm.transform.position.x < (transform.position.x - Adistance) && Adirection == 5) || timer <= 0)
                 {
                     attack = 0;
                     CPattack = 0;
@@ -299,7 +337,7 @@ internal class Attack_mechanics : MonoBehaviour {
 
             //__________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-            if ((attacktype < 21 || CDattack == 1) && cooldown == 0) // corridor attack - done I think
+            if ((attacktype == -2 || CDattack == 1) && cooldown == 0) // corridor attack - done I think
             {
                 CDattack = 1;
                 if (attack == 0)
