@@ -27659,7 +27659,7 @@ GameObject:
   - component: {fileID: 689172482}
   m_Layer: 0
   m_Name: FPSController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40570,7 +40570,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 142324915
+  randomSeed: 1000053050
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -46339,7 +46339,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1536199420
+  randomSeed: -1988064509
   InitialModule:
     serializedVersion: 3
     enabled: 1

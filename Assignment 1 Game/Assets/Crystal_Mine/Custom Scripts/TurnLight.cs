@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+
 
 public class TurnLight : MonoBehaviour
 {
 
-    public GameObject light;
-    //public Light lightToDim = null;
+    public GameObject TheLight;
+    
     private bool on = false;
 
     // Use this for initialization
@@ -18,13 +16,13 @@ public class TurnLight : MonoBehaviour
     {
         if (plyr.tag == "Player" && Input.GetMouseButtonDown(0) && !on)
         {
-            light.SetActive(true);
+            TheLight.SetActive(true);
             on = true;
 
         }
         else if (plyr.tag == "Player" && Input.GetMouseButtonDown(0) && on)
         {
-            light.SetActive(false);
+            TheLight.SetActive(false);
             on = false;
         }
 
