@@ -59,8 +59,18 @@ public class TabletText : MonoBehaviour
                 message.text = "I guess theres a lot of... dead ends...";
                 break;
             case "HouseBurn":
-                message.text = "Whatever it is... It can do some damage...";
+                message.text = "Looks like whatever it isnt doesnt like nosie...";
                 break;
+            case "lever":
+                message.text = "a lever... must be hidden somewhere";
+                break;
+            case "door":
+                message.text = "that must be the way to my brother";
+                break;
+            case "web":
+                message.text = "I bet i can burn those webs\n must had taken years to get that big...";
+                break;
+
 
             
         }
