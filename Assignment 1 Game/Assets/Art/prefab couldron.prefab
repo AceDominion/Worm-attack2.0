@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 23047970759710480}
   - component: {fileID: 198124075777678664}
   - component: {fileID: 199535037407227328}
+  - component: {fileID: 82814445981171908}
   m_Layer: 0
   m_Name: FLAME PARTICLE
   m_TagString: Untagged
@@ -380,7 +381,8 @@ GameObject:
   - component: {fileID: 4281474362977014}
   - component: {fileID: 95695525148367476}
   - component: {fileID: 111531443153792698}
-  - component: {fileID: 65271226489381070}
+  - component: {fileID: 136575648339623160}
+  - component: {fileID: 136476406601121652}
   m_Layer: 0
   m_Name: prefab couldron
   m_TagString: Untagged
@@ -519,7 +521,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865898576874522}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.459805, y: -0.01, z: 17.361979}
+  m_LocalPosition: {x: -33.25, y: -0.01, z: 17.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4624238873867574}
@@ -1658,18 +1660,92 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1478507200183542}
   m_Mesh: {fileID: 4300004, guid: c462d7d28e3f9cf41b92ae14ad208f94, type: 3}
---- !u!65 &65271226489381070
-BoxCollider:
+--- !u!82 &82814445981171908
+AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1865898576874522}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 1478507200183542}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.66, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0b21eb3979975db43ace10eeb81eb376, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.85
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 4
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0.390625
+      value: 1
+      inSlope: -2.5610237
+      outSlope: -2.5610237
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.7781677
+      value: 0.47737122
+      inSlope: -0.6402559
+      outSlope: -0.6402559
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0.390625
+      inSlope: -0.39078146
+      outSlope: -0.39078146
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95695525148367476
 Animator:
   serializedVersion: 3
@@ -1737,6 +1813,32 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!136 &136476406601121652
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865898576874522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 2, z: 0}
+--- !u!136 &136575648339623160
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865898576874522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!198 &198124075777678664
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1797,7 +1899,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 808531552
+  randomSeed: -1496391395
   InitialModule:
     serializedVersion: 3
     enabled: 1
