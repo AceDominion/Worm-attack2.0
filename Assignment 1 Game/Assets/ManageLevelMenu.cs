@@ -2,24 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ManageLevelMenu : MonoBehaviour {
     public Button b1;
     public Button b2;
-    string level = "aztec";
+    public Button p;
+    string level = "cave";
     public GameObject aztecPic;
     public GameObject cavePic;
-    Vector3 placement
+    public Text bodyText;
+    //Vector3 placement;
 
     // Use this for initialization
     void Start () {
-        placement = aztecPic.transform.position;
-        Quaternion rotational = aztecPic.transform.rotation;
+        //placement = aztecPic.transform.position;
+        //Quaternion rotational = aztecPic.transform.rotation;
         Button left = b1.GetComponent<Button>();
         Button right = b2.GetComponent<Button>();
+        Button play = p.GetComponent<Button>();
 
-        left.onClick.AddListener(rotater);
-        right.onClick.AddListener(rotater);
+        left.onClick.AddListener(Rotater);
+        right.onClick.AddListener(Rotater);
+        p.onClick.AddListener(PlaySwitch);
+        Rotater();
     }
 	
 	// Update is called once per frame
@@ -31,18 +37,20 @@ public class ManageLevelMenu : MonoBehaviour {
         }
 	}
 
-    void rotater()
+    void Rotater()
     {
         if (level == "aztec")
         {
             level = "cave";
             ClearCreated(false);
+            bodyText.text = "The Cave\nHIGHSCORE \nN \nSTUFF";
             Debug.Log("Cave");
         }
         else
         {
             level = "aztec";
             ClearCreated(true);
+            bodyText.text = "The Aztec Maze\nHIGHSCORE \nN \nSTUFF";
             Debug.Log("Aztec");
         }
     }
@@ -50,14 +58,30 @@ public class ManageLevelMenu : MonoBehaviour {
     {
         if (aztec)
         {
-            aztecPic.transform.Translate(placement);
-            cavePic.transform.Translate(Vector3.forward*5);
+            aztecPic.SetActive(true);
+            cavePic.SetActive(false);
+            //aztecPic.transform.Translate(placement);
+            //cavePic.transform.Translate(Vector3.forward*5);
         }
         else
         {
-            cavePic.transform.Translate(placement);
-            aztecPic.transform.Translate(Vector3.forward * 5);
+            aztecPic.SetActive(false);
+            cavePic.SetActive(true);
+            //cavePic.transform.Translate(placement);
+            //aztecPic.transform.Translate(Vector3.forward * 5);
         }
+    }
+    void PlaySwitch()
+    {
+        if(level == "cave")
+        {
+            SceneManager.LoadScene("Mine");
+        }
+        else
+        {
+            SceneManager.LoadScene("Map One");
+        }
+        
     }
     
 }
