@@ -27757,7 +27757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charge: 0
-  buildspeed: 50
+  buildspeed: 0.1
   exit: 0.9
   leaveS: 0
   leaveN: 0
@@ -27770,16 +27770,16 @@ MonoBehaviour:
   checkpos: {x: 0, y: 0, z: 0}
   Worm: {fileID: 942210449}
   attack: 0
-  Aspeed: 4
+  Aspeed: 6
   CPattack: 0
   SWattack: 0
   CDattack: 0
   Adistance: 15
   Adirection: -2
-  Afrom: 15
+  Afrom: 10
   cooldown: 0
-  timer: 3
-  reset: 3
+  timer: 8
+  reset: 8
   RCD: 0
   drop: 0.9
   buffer: 0
@@ -27943,16 +27943,16 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 689172474}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48f487982aeb294419ba058b009f78fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   light_level: 0
-  timer: 10
-  max_time: 10
-  timer2: 12
-  max_time2: 12
+  timer: 80
+  max_time: 80
+  timer2: 90
+  max_time2: 90
   light_level2: 0
   torch: {fileID: 856938300}
   torch2: {fileID: 790700824}
@@ -27965,13 +27965,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 689172474}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ea87d882c3a08d4393b115ec8595313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 12
-  max_time: 12
+  timer: 90
+  max_time: 90
   fire_size: 2
   inital_fire_size: 2
   Fire: {fileID: 1231053173}
@@ -33642,6 +33642,18 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400166, guid: fb81da775b28f7343869b56c71c0a71e, type: 3}
   m_PrefabInternal: {fileID: 27944166}
+--- !u!65 &942210451
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942210449}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 80, y: 100, z: 365}
+  m_Center: {x: 3, y: 40, z: -142}
 --- !u!4 &944098066 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4531128203005440, guid: 8efee9693979d6948877747fea12602a,
