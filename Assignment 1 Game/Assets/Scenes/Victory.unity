@@ -2578,16 +2578,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1471070103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 97b230a4c645a4141b2c3fabd754e119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
-  m_Script: {fileID: 11500000, guid: 2b8edf3306a6d464a8602d78dfc7c36f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScoreBoard: {fileID: 0}
->>>>>>> 390a2bd1f42b606a4908f2bbedf98c7160b32898
 --- !u!1 &1514163262
 GameObject:
   m_ObjectHideFlags: 0
