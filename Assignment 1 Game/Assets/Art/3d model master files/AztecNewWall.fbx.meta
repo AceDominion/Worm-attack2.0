@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e65ce2e9519fc3b4086ed44ecb626502
-timeCreated: 1538793051
+guid: 14af7afa2e7970a4fa42237275e2ac51
+timeCreated: 1540252652
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -18,11 +18,6 @@ ModelImporter:
     100020: Cylinder002
     100022: Cylinder003
     100024: Cylinder004
-    100026: Box010
-    100028: Box011
-    100030: Box012
-    100032: Box013
-    100034: Box015
     400000: //RootNode
     400002: Box001
     400004: Box002
@@ -36,11 +31,6 @@ ModelImporter:
     400020: Cylinder002
     400022: Cylinder003
     400024: Cylinder004
-    400026: Box010
-    400028: Box011
-    400030: Box012
-    400032: Box013
-    400034: Box015
     2100000: No Name
     2300000: Box001
     2300002: Box002
@@ -54,11 +44,6 @@ ModelImporter:
     2300018: Cylinder002
     2300020: Cylinder003
     2300022: Cylinder004
-    2300024: Box010
-    2300026: Box011
-    2300028: Box012
-    2300030: Box013
-    2300032: Box015
     3300000: Box001
     3300002: Box002
     3300004: Box003
@@ -71,11 +56,6 @@ ModelImporter:
     3300018: Cylinder002
     3300020: Cylinder003
     3300022: Cylinder004
-    3300024: Box010
-    3300026: Box011
-    3300028: Box012
-    3300030: Box013
-    3300032: Box015
     4300000: Box001
     4300002: Box002
     4300004: Box003
@@ -88,11 +68,6 @@ ModelImporter:
     4300018: Cylinder003
     4300020: Cylinder004
     4300022: Box009
-    4300024: Box010
-    4300026: Box011
-    4300028: Box012
-    4300030: Box013
-    4300032: Box015
   externalObjects: {}
   materials:
     importMaterials: 1
