@@ -28501,10 +28501,10 @@ MonoBehaviour:
   CDattack: 0
   Adistance: 15
   Adirection: -2
-  Afrom: 10
+  Afrom: 15
   cooldown: 0
-  timer: 8
-  reset: 8
+  timer: 10
+  reset: 10
   drop: 0.9
   correction: 0
   checkpoint: 
