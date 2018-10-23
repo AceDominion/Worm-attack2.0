@@ -3506,6 +3506,7 @@ GameObject:
   - component: {fileID: 1749147861}
   - component: {fileID: 1749147860}
   - component: {fileID: 1749147864}
+  - component: {fileID: 1749147865}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3593,6 +3594,17 @@ MonoBehaviour:
   aztecPic: {fileID: 1040989224}
   cavePic: {fileID: 774013205}
   bodyText: {fileID: 13987146}
+--- !u!114 &1749147865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1749147859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bab379821ce7048b2ff2e5f4a69791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1765265139
 GameObject:
   m_ObjectHideFlags: 0
