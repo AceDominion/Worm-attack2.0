@@ -203,13 +203,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        private void GetInput(out float speed)
+        private void GetInput(out float speed) // charge is built here---------
         {
             // Read input
             float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
 
-            if(CrossPlatformInputManager.GetAxis("Horizontal") != 0)
+            if (Input.GetKey(KeyCode.LeftShift) == true)
+            {
+                GetComponent<Attack_mechanics>().buildspeed = GetComponent<Attack_mechanics>().run;
+            }
+            else
+                GetComponent<Attack_mechanics>().buildspeed = GetComponent<Attack_mechanics>().walk;
+
+
+            if (CrossPlatformInputManager.GetAxis("Horizontal") != 0)
             {
                 GetComponent<Attack_mechanics>().charge += GetComponent<Attack_mechanics>().buildspeed;
             }
