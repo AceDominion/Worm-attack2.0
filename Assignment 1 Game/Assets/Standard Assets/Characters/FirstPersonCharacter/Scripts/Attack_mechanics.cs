@@ -7,8 +7,6 @@ internal class Attack_mechanics : MonoBehaviour {
 
     public float charge;
     public float buildspeed;
-    public float run;
-    public float walk;
     public float exit = 2;
     public float leaveS;
     public float leaveN;
@@ -31,10 +29,11 @@ internal class Attack_mechanics : MonoBehaviour {
     public int cooldown;
     public float timer;
     public float reset;
+    public int RCD;
     public float drop;
+    public float buffer;
     public float correction;
     public string checkpoint;
-    public float missby;
 
     List<Checkpoint> Checkpoints;
     public Checkpoint currentCheckpoint;
@@ -45,8 +44,6 @@ internal class Attack_mechanics : MonoBehaviour {
     void Start ()
     {
         Checkpoints = new List<Checkpoint>();
-
-        //MAP ONE
         Checkpoint ck1 = new Checkpoint("ck1",1.5f, 3.5f, 0, 0, 1.5f, 3.5f, 1.5f, 3.5f);
         Checkpoint ck2 = new Checkpoint("ck2",0, 5f, 1.5f, 0, 1.5f, 5f, 0, 5f);
         Checkpoint ck3 = new Checkpoint("ck3", 0, 0, 9f, 3.5f, 9f, 3.5f, 0, 0);
@@ -105,10 +102,6 @@ internal class Attack_mechanics : MonoBehaviour {
         Checkpoint ck56 = new Checkpoint("ck56", 0, 1f, 7f, 0, 7f, 1f, 0, 1f);
         Checkpoint ck57 = new Checkpoint("ck57", 0, 0, 6f, 8.5f, 8f, 18.5f, 6f, 0);
 
-
-        //MINE
-
-        //MAP ONE
         Checkpoints.Add(ck1);
         Checkpoints.Add(ck2);
         Checkpoints.Add(ck3);
@@ -166,8 +159,6 @@ internal class Attack_mechanics : MonoBehaviour {
         Checkpoints.Add(ck56);
         Checkpoints.Add(ck57);
 
-        //MINE
-
 
         attack = 0;
         direction = -2;
@@ -185,7 +176,6 @@ internal class Attack_mechanics : MonoBehaviour {
         int RWattack = rnd.Next(1, 5);
         int RCattack = rnd.Next(1, 3);
         int RCDattack = rnd.Next(1, 3);
-        float attackmiss = rnd.Next(1, 6);
 
         //_____________________________________________________________________________________________________________________________________________________________________________________________________
 
@@ -201,14 +191,12 @@ internal class Attack_mechanics : MonoBehaviour {
                         Worm.transform.position = new Vector3(checkpos.x, checkpos.y + Afrom, checkpos.z - 8f);
                         Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
                         Adirection = 1;
-                        Worm.SetActive(true);
                     }
                     else if (RCattack == 2)
                     {
                         Worm.transform.position = new Vector3(checkpos.x, checkpos.y - Afrom, checkpos.z + 0.8f);
                         Worm.transform.rotation = new Quaternion(-90, 0, 0, 90);
                         Adirection = 2;
-                        Worm.SetActive(true);
                     }
                     attack = 1;
                 }
@@ -231,7 +219,6 @@ internal class Attack_mechanics : MonoBehaviour {
                     CDattack = 0;
                     cooldown = 1; // cooldown only stops attacks when the attack finishes not while the attack is happening
                     timer = reset;
-                    Worm.SetActive(false);
                 }
             }
 
@@ -245,37 +232,32 @@ internal class Attack_mechanics : MonoBehaviour {
 
                 if (attack == 0)
                 {
-                    missby = attackmiss - 2.5f;
                     if (direction == 0 || direction == 2)
                     {
 
                         if (RWattack == 1)
                         {
-                            Worm.transform.position = new Vector3(transform.position.x + missby, checkpos.y - AfromTwo, checkpos.z + 0.8f);// up
+                            Worm.transform.position = new Vector3(transform.position.x, checkpos.y - AfromTwo, checkpos.z + 0.8f);// up
                             Worm.transform.rotation = new Quaternion(-90, 0, 0, 90);
                             Adirection = 0;
-                            Worm.SetActive(true);
                         }
                         else if (RWattack == 2)
                         {
-                            Worm.transform.position = new Vector3(transform.position.x + missby, checkpos.y + AfromTwo, checkpos.z - 0.8f);// down
+                            Worm.transform.position = new Vector3(transform.position.x, checkpos.y + AfromTwo, checkpos.z - 0.8f);// down
                             Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
                             Adirection = 1;
-                            Worm.SetActive(true);
                         }
                         else if (RWattack == 3)
                         {
-                            Worm.transform.position = new Vector3(transform.position.x + missby, checkpos.y, checkpos.z - AfromTwo);// left
+                            Worm.transform.position = new Vector3(transform.position.x, checkpos.y, checkpos.z - AfromTwo);// left
                             Worm.transform.rotation = new Quaternion(0, 0, 90, 90);
                             Adirection = 2;
-                            Worm.SetActive(true);
                         }
                         else if (RWattack == 4)
                         {
-                            Worm.transform.position = new Vector3(transform.position.x + missby, checkpos.y - drop, checkpos.z + AfromTwo);// right
+                            Worm.transform.position = new Vector3(transform.position.x, checkpos.y - drop, checkpos.z + AfromTwo);// right
                             Worm.transform.rotation = new Quaternion(0, 90, 0, 0);
                             Adirection = 3;
-                            Worm.SetActive(true);
                         }
                         attack = 1;
                     }
@@ -284,31 +266,27 @@ internal class Attack_mechanics : MonoBehaviour {
                     {
                         if (RWattack == 1)
                         {
-                            Worm.transform.position = new Vector3(checkpos.x, checkpos.y - AfromTwo, transform.position.z + missby);// up
+                            Worm.transform.position = new Vector3(checkpos.x, checkpos.y - AfromTwo, transform.position.z);// up
                             Worm.transform.rotation = new Quaternion(-90, 0, 0, 90);
                             Adirection = 0;
-                            Worm.SetActive(true);
                         }
                         else if (RWattack == 2)
                         {
-                            Worm.transform.position = new Vector3(checkpos.x, checkpos.y + AfromTwo, transform.position.z + missby);// down
+                            Worm.transform.position = new Vector3(checkpos.x, checkpos.y + AfromTwo, transform.position.z);// down
                             Worm.transform.rotation = new Quaternion(90, 0, 0, 90);
                             Adirection = 1;
-                            Worm.SetActive(true);
                         }
                         else if (RWattack == 3)
                         {
-                            Worm.transform.position = new Vector3(checkpos.x - AfromTwo, checkpos.y - drop, transform.position.z + missby);// left
+                            Worm.transform.position = new Vector3(checkpos.x - AfromTwo, checkpos.y - drop, transform.position.z);// left
                             Worm.transform.rotation = new Quaternion(0, 0, 0, 0);
                             Adirection = 4;
-                            Worm.SetActive(true);
                         }
                         else if (RWattack == 4)
                         {
-                            Worm.transform.position = new Vector3(checkpos.x + AfromTwo, checkpos.y - drop, transform.position.z + missby);// right
+                            Worm.transform.position = new Vector3(checkpos.x + AfromTwo, checkpos.y - drop, transform.position.z);// right
                             Worm.transform.rotation = new Quaternion(0, -180, 0, 180);
                             Adirection = 5;
-                            Worm.SetActive(true);
                         }
                         attack = 1;
                     }
@@ -354,7 +332,7 @@ internal class Attack_mechanics : MonoBehaviour {
                     cooldown = 1;
                     timer = reset;
                     Adirection = -2;
-                    Worm.SetActive(false);
+                    RCD = 0;
                 }
             }
 
@@ -397,14 +375,12 @@ internal class Attack_mechanics : MonoBehaviour {
                                 Worm.transform.position = new Vector3(checkpos.x - correction - Afrom, checkpos.y - drop, checkpos.z);
                                 Worm.transform.rotation = new Quaternion(0, 0, 0, 0);
                                 Adirection = 0;
-                                Worm.SetActive(true);
                             }
                             else if (RCDattack == 1) //+X
                             {
                                 Worm.transform.position = new Vector3(checkpos.x + correction + Afrom, checkpos.y - drop, checkpos.z);
                                 Worm.transform.rotation = new Quaternion(0, -180, 0, 180);
                                 Adirection = 2;
-                                Worm.SetActive(true);
                             }
                         }
                     }
@@ -438,14 +414,12 @@ internal class Attack_mechanics : MonoBehaviour {
                             Worm.transform.position = new Vector3(checkpos.x, checkpos.y - drop, checkpos.z - correction - Afrom);
                             Worm.transform.rotation = new Quaternion(0, 0, 0, 180);
                             Adirection = 1;
-                            Worm.SetActive(true);
                         }
                         else if (RCDattack == 1) //+Z
                         {
                             Worm.transform.position = new Vector3(checkpos.x, checkpos.y - drop, checkpos.z + correction + Afrom);
                             Worm.transform.rotation = new Quaternion(0, 180, 0, 0);
                             Adirection = 3;
-                            Worm.SetActive(true);
                         }
                     }
                     attack = 1;
@@ -478,7 +452,6 @@ internal class Attack_mechanics : MonoBehaviour {
                     cooldown = 1;
                     timer = reset;
                     Adirection = -2;
-                    Worm.SetActive(false);
                 }
             }
 
