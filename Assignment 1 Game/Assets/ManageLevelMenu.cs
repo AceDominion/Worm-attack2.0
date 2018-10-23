@@ -26,6 +26,12 @@ public class ManageLevelMenu : MonoBehaviour {
         right.onClick.AddListener(Rotater);
         p.onClick.AddListener(PlaySwitch);
         Rotater();
+
+
+        for (int i = 1; i < 6; i++)
+        {
+            GameObject.Find("star" + i).SetActive(false);
+        }
     }
 	
 	// Update is called once per frame
