@@ -37,7 +37,7 @@ public class CollectTotem : MonoBehaviour {
             Debug.Log("got" + count);
         }
 
-        if (other.name.Contains("door_test"))
+        if (other.name.Contains("door"))
         {
             RecordScore();
             count = 0;
