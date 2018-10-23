@@ -45,6 +45,14 @@ public class ManageLevelMenu : MonoBehaviour {
             ClearCreated(false);
             bodyText.text = "The Cave\nHIGHSCORE \nN \nSTUFF";
             Debug.Log("Cave");
+
+            int stars = PlayerPrefs.GetInt("current_collected_number_level_1");
+            Debug.Log("level_1 stars: " + stars);
+            for(int i = 1; i< stars; i++)
+            {
+                GameObject.Find("star" + i).SetActive(true);
+            }
+
         }
         else
         {
@@ -52,6 +60,14 @@ public class ManageLevelMenu : MonoBehaviour {
             ClearCreated(true);
             bodyText.text = "The Aztec Maze\nHIGHSCORE \nN \nSTUFF";
             Debug.Log("Aztec");
+
+            int stars = PlayerPrefs.GetInt("current_collected_number_level_2");
+            Debug.Log("level_2 stars: " + stars);
+
+            for (int i = 1; i < stars; i++)
+            {
+                GameObject.Find("star" + i).SetActive(true);
+            }
         }
     }
     void ClearCreated(bool aztec)
@@ -61,7 +77,7 @@ public class ManageLevelMenu : MonoBehaviour {
             aztecPic.SetActive(true);
             cavePic.SetActive(false);
             //aztecPic.transform.Translate(placement);
-            //cavePic.transform.Translate(Vector3.forward*5);
+            //cavePic.transform.Translate(Vector3.forward*5);   
         }
         else
         {
@@ -75,10 +91,12 @@ public class ManageLevelMenu : MonoBehaviour {
     {
         if(level == "cave")
         {
+            PlayerPrefs.SetInt("Level", 2);
             SceneManager.LoadScene("Mine");
         }
         else
         {
+            PlayerPrefs.SetInt("Level", 1);
             SceneManager.LoadScene("Map One");
         }
         
