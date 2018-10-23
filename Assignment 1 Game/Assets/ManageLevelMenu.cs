@@ -51,7 +51,7 @@ public class ManageLevelMenu : MonoBehaviour {
             ClearCreated(false);
             bodyText.text = "The Cave\nHIGHSCORE \nN \nSTUFF";
             Debug.Log("Cave");
-            
+
             int stars = PlayerPrefs.GetInt("current_collected_number_level_1");
             Debug.Log("level_1 stars: " + stars);
             for(int i = 1; i< stars; i++)
