@@ -49,15 +49,84 @@ public class CollectTotem : MonoBehaviour
         {
             RecordScore();
             countSession = 0;
-            Cursor.visible = true;
             SceneManager.LoadScene("Death");
 
         }
+
+        #region delete
+        /*
+        // record the total credit, when pass the door or caught by the worm
+        if (other.name.Contains("door_test") || other.name.Contains("worm")) 
+        {
+            // accumulate the count for current session
+            countSession += count;
+
+            // update the highest score for the current level
+            if (!PlayerPrefs.HasKey(currLevelHighestNumberKey))
+            {
+                PlayerPrefs.SetInt(currLevelHighestNumberKey, count);
+                PlayerPrefs.Save();
+
+                Debug.Log("【First time to record the high score】for the level" + currLevel + ": " + PlayerPrefs.GetString(currLevelHighestNumberKey));
+            }
+            else
+            {
+                if (count > PlayerPrefs.GetInt(currLevelHighestNumberKey))
+                {
+                    PlayerPrefs.SetInt(currLevelHighestNumberKey, count);
+                    PlayerPrefs.Save();
+
+                    Debug.Log("【Update the high score】for the level" + currLevel + ": " + PlayerPrefs.GetString(currLevelHighestNumberKey));
+                }
+            }
+
+            // add the current score to the score list (all levels together)
+            if (!PlayerPrefs.HasKey("HighScores"))
+            {
+                PlayerPrefs.SetString("HighScores", countSession.ToString());
+                PlayerPrefs.Save();
+
+                Debug.Log("First time to add into the list】" + PlayerPrefs.GetString("HighScores"));
+
+            }
+            else
+            {
+                string scores = PlayerPrefs.GetString("HighScores");
+                scores = countSession + "," + scores;
+                PlayerPrefs.SetString("HighScores", scores);
+                PlayerPrefs.Save();
+
+                Debug.Log("【add scores to add into the list】" + PlayerPrefs.GetString("HighScores"));
+            }
+
+            // reset the count, and pop up the result
+            count = 0;
+            if (other.name.Contains("worm")) //reset the session's count only if it is caught by the worm
+            {
+                countSession = 0;    
+                // pop up "You Died" //待更新
+            }            
+
+            // Go to Died or Win
+            if (other.name.Contains("door_test"))
+            {
+                // pop up "Win" //待更新
+            }
+        }
+        */
+        #endregion
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-       
+        if (collision.transform.name.Contains("worm"))
+        {
+            Debug.Log("hi caught you");
+            RecordScore();
+            countSession = 0;
+            SceneManager.LoadScene("Death", LoadSceneMode.Additive);
+
+        }
     }
 
     void RecordScore()
